@@ -1,0 +1,143 @@
+<section>
+  <div class="relative">
+    <div class="custom-slider overflow-hidden" id="custom-slider">
+      <div class="flex transition-all duration-500" id="slider-track">
+        {% for block in section.blocks %}
+        <div class="w-full shrink-0 flex flex-col md:flex-row items-center justify-center py-10 md:py-16"
+          style="background: {{ section.settings.background }};" {{ block.shopify_attributes }}>
+
+          <!-- Image Left -->
+          <div class="md:w-3/5 w-full flex items-center justify-center mb-6 md:mb-0 md:mr-6">
+            {% if block.settings.slider_image != blank %}
+            <img height="" width="" src="{{ block.settings.slider_image | image_url: width: 800 }}"
+              alt="Slider image" class="rounded-lg w-full max-w-[700px] max-h-[550px]" />
+            {% else %}
+            <div class="bg-gray-200 w-full h-[280px] flex items-center justify-center text-gray-500">Image here</div>
+            {% endif %}
+          </div>
+
+          <!-- Text Right -->
+          <div class="relative md:w-[30%] w-full flex flex-col items-start">
+            <div class="flex items-center gap-3 mb-5"
+              style="
+                font-size: {{ block.settings.main_text_size }}px;
+                color: {{ block.settings.text_color }};
+                font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};
+              ">
+              <span>{{ block.settings.custom_text }}</span>
+              <div class="absolute top-[30px] right-10 md:top-[-30px] md:right-[-50px]">
+                {% if block.settings.logo_img != blank %}
+                <img height="" width="" src="{{ block.settings.logo_img | image_url: width: 50 }}"
+                  alt="Logo" style="width: {{ block.settings.logo_size }}px; height:auto;" />
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="italic mt-2"
+              style="font-size: {{ block.settings.love_text_size }}px; color: {{ block.settings.love_text_color }}; letter-spacing: 1px;">
+              {{ block.settings.love_text }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <button id="slider-prev"
+        class="absolute left-3 top-1/2 -translate-y-1/2 bg-rose-100/40 backdrop-blur-sm rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow cursor-pointer">‹</button>
+      <button id="slider-next"
+        class="absolute right-3 top-1/2 -translate-y-1/2 bg-rose-100/30 backdrop-blur-sm rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow cursor-pointer">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById('slider-track');
+    const slides = Array.from(track.children);
+    let current = 0;
+
+    function showSlide(idx) {
+      const slideWidth = slides[0].offsetWidth;
+      track.style.transform = `translateX(-${idx * slideWidth}px)`;
+    }
+
+    document.getElementById('slider-prev').onclick = () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    };
+    document.getElementById('slider-next').onclick = () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    };
+
+    window.addEventListener('resize', () => showSlide(current));
+    showSlide(current);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Image/Text Slider",
+  "settings": [
+    {
+          "type": "font_picker",
+          "id": "main_font",
+          "label": "Main Text Font",
+          "default": "work_sans_n4"
+        },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "slider_image", "label": "Image (Left)" },
+        { "type": "text", "id": "custom_text", "label": "Main Text", "default": "ENJOY LIFE SIP BY SIP" },
+        { "type": "image_picker", "id": "logo_img", "label": "Logo (beside main text)" },
+        { "type": "color", "id": "text_color", "label": "Main Text Color", "default": "#222" },
+        {
+          "type": "range",
+          "id": "main_text_size",
+          "label": "Font Size",
+          "min": 12,
+          "max": 60,
+          "step": 2,
+          "default": 30
+        },
+       
+        {
+          "type": "range",
+          "id": "logo_size",
+          "label": "Logo Size (px)",
+          "min": 20,
+          "max": 80,
+          "default": 44
+        },
+        { "type": "text", "id": "love_text", "label": "With Love! Text", "default": "with love!" },
+        {
+          "type": "color",
+          "id": "love_text_color",
+          "label": "With Love! Text Color",
+          "default": "#555"
+        },
+        {
+          "type": "range",
+          "id": "love_text_size",
+          "label": "With Love! Text Size (px)",
+          "min": 10,
+          "max": 36,
+          "default": 18
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Custom Slider" }]
+}
+{% endschema %}

@@ -9,62 +9,131 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "image_with_text_PyYGfr": {
+      "type": "image-with-text",
       "blocks": {
-        "heading": {
+        "heading_TKfUan": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "ENJOY <strong>LIFE</strong>  <em>SIP BY SIP</em>",
+            "heading_size": "hxl"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_fNdRTT": {
+          "type": "text",
+          "disabled": true,
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "button_MxfwX9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_TKfUan",
+        "text_fNdRTT",
+        "button_MxfwX9"
       ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+        "height": "medium",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "image_behavior": "zoom-in",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_slider_kTaTiM": {
+      "type": "custom-slider",
+      "blocks": {
+        "slide_rmtEP7": {
+          "type": "slide",
+          "settings": {
+            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+            "custom_text": "ENJOY LIFE SIP BY SIP",
+            "logo_img": "shopify://shop_images/rev-png-3_png.png",
+            "text_color": "#222222",
+            "main_text_size": 38,
+            "logo_size": 44,
+            "love_text": "with love!",
+            "love_text_color": "#555555",
+            "love_text_size": 18
+          }
+        },
+        "slide_H9gwED": {
+          "type": "slide",
+          "settings": {
+            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+            "custom_text": "Breathe Deep. Sip Slow.",
+            "logo_img": "shopify://shop_images/rev-png-3_png.png",
+            "text_color": "#222222",
+            "main_text_size": 44,
+            "logo_size": 44,
+            "love_text": "Live Fully.",
+            "love_text_color": "#555555",
+            "love_text_size": 18
+          }
+        },
+        "slide_RfKEAw": {
+          "type": "slide",
+          "settings": {
+            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+            "custom_text": "Sip. Smile. Repeat.",
+            "logo_img": "shopify://shop_images/rev-png-3_png.png",
+            "text_color": "#222222",
+            "main_text_size": 44,
+            "logo_size": 44,
+            "love_text": "with love!",
+            "love_text_color": "#555555",
+            "love_text_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "slide_rmtEP7",
+        "slide_H9gwED",
+        "slide_RfKEAw"
+      ],
+      "name": "Custom Slider",
+      "settings": {
+        "main_font": "azeret_mono_n4",
+        "background": "#ffffff"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -72,13 +141,15 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
+    "image_with_text_PyYGfr",
+    "custom_slider_kTaTiM",
     "featured_collection"
   ]
 }
