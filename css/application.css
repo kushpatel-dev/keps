@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-header .header{
+header.header{
     @apply bg-amber-600;
 }
