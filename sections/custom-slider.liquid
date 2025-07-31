@@ -17,7 +17,7 @@
           </div>
 
           <!-- Text Right -->
-          <div class="relative md:w-[30%] w-full flex flex-col items-start">
+          <div class="relative px-8 md:w-[30%] w-full flex flex-col items-start">
             <div class="flex items-center gap-3 mb-5"
               style="
                 font-size: {{ block.settings.main_text_size }}px;
@@ -25,7 +25,7 @@
                 font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};
               ">
               <span>{{ block.settings.custom_text }}</span>
-              <div class="absolute top-[30px] right-10 md:top-[-30px] md:right-[-10px]">
+              <div class="absolute top-[80px] right-10 md:top-[-30px] md:right-[-10px]">
                 {% if block.settings.logo_img != blank %}
                 <img height="" width="" src="{{ block.settings.logo_img | image_url: width: 50 }}"
                   alt="Logo" style="width: {{ block.settings.logo_size }}px; height:auto;" />
@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <div class="italic mt-2"
+            <div class="italic mt-2 transition-all duration-300 border-b-2 border-transparent hover:border-black hover:text-orange-600"
               style="font-size: {{ block.settings.love_text_size }}px; color: {{ block.settings.love_text_color }}; letter-spacing: 1px;">
               {{ block.settings.love_text }}
             </div>
