@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.ctm-h2 {
+  @apply text-4xl xl:text-6xl font-extrabold font-sans uppercase text-neutral-800 leading-tight;
+}
+
+.ctm-h3 {
+  @apply text-2xl font-bold uppercase text-gray-900 text-center;
+}
+
+
+.ctm-font h2 {
+  @apply text-amber-50 font-extrabold font-serif inline-flex;
+}
+.ctm-font h2:hover {
+  @apply text-[#d76735];
+}
+
+.ctm-review-text{
+    @apply text-2xl md:text-3xl font-extrabold text-center text-gray-900 mb-3 leading-tight
+}

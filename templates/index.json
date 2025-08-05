@@ -63,10 +63,24 @@
     "custom_slider_kTaTiM": {
       "type": "custom-slider",
       "blocks": {
+        "slide_RfKEAw": {
+          "type": "slide",
+          "settings": {
+            "slider_image": "shopify://shop_images/coffee-2374466_640.jpg",
+            "custom_text": "Sip. Smile. Repeat.",
+            "logo_img": "shopify://shop_images/rev-png-3_png.png",
+            "text_color": "#222222",
+            "main_text_size": 38,
+            "logo_size": 46,
+            "love_text": "with love!",
+            "love_text_color": "#555555",
+            "love_text_size": 18
+          }
+        },
         "slide_rmtEP7": {
           "type": "slide",
           "settings": {
-            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+            "slider_image": "shopify://shop_images/caffeine-1846280_1280.jpg",
             "custom_text": "ENJOY LIFE SIP BY SIP",
             "logo_img": "shopify://shop_images/rev-png-3_png.png",
             "text_color": "#222222",
@@ -80,7 +94,7 @@
         "slide_H9gwED": {
           "type": "slide",
           "settings": {
-            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
+            "slider_image": "shopify://shop_images/coffee-on-rustic-cottage-table.jpg",
             "custom_text": "Breathe Deep. Sip Slow.",
             "logo_img": "shopify://shop_images/rev-png-3_png.png",
             "text_color": "#222222",
@@ -90,26 +104,12 @@
             "love_text_color": "#555555",
             "love_text_size": 18
           }
-        },
-        "slide_RfKEAw": {
-          "type": "slide",
-          "settings": {
-            "slider_image": "shopify://shop_images/main-home-rev-slider-3_jpg.png",
-            "custom_text": "Sip. Smile. Repeat.",
-            "logo_img": "shopify://shop_images/rev-png-3_png.png",
-            "text_color": "#222222",
-            "main_text_size": 38,
-            "logo_size": 46,
-            "love_text": "with love!",
-            "love_text_color": "#555555",
-            "love_text_size": 18
-          }
         }
       },
       "block_order": [
+        "slide_RfKEAw",
         "slide_rmtEP7",
-        "slide_H9gwED",
-        "slide_RfKEAw"
+        "slide_H9gwED"
       ],
       "name": "Custom Slider",
       "settings": {
@@ -151,6 +151,7 @@
       "type": "custom-product-section",
       "name": "Custom Featured Products",
       "settings": {
+        "heading-top": "OUR POPULER COLLECTION,",
         "heading": "OUR BLENDS DELIVER ON THE PROMISE OF BALANCE AND CONSISTENCY,",
         "highlight_text": "ROASTED TO",
         "heading_2": "MAXIMIZE SWEETNESS.",
@@ -160,12 +161,161 @@
         "product_collection": "coffee",
         "products_limit": 2
       }
+    },
+    "image_banner_8fTJtc": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_c3yCn3": {
+          "type": "heading",
+          "settings": {
+            "heading": "MORE THAN JUST A COFFEE SHOP",
+            "heading_size": "h0"
+          }
+        },
+        "text_J3tbgw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_h9GPCb": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_c3yCn3",
+        "text_J3tbgw",
+        "buttons_h9GPCb"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/coffee-2306471_1280.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "ctm_review_section_HfTWYd": {
+      "type": "ctm-review-section",
+      "blocks": {
+        "review_Yjx6Vp": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "Their cappuccino is always smooth, rich, and perfectly balanced.",
+            "author": "Ella Ferns",
+            "image": "shopify://shop_images/pexels-kaboompics-6347.jpg"
+          }
+        },
+        "review_VATXpa": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "The aroma hits you the moment you walk in.",
+            "author": "Mark Joseph",
+            "image": "shopify://shop_images/pexels-ifreestock-585753.jpg"
+          }
+        },
+        "review_TWqhxp": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "You can taste the passion in every cup here",
+            "author": "keps",
+            "image": "shopify://shop_images/coffee-4334647_640.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "review_Yjx6Vp",
+        "review_VATXpa",
+        "review_TWqhxp"
+      ],
+      "name": "Review Carousel With Image",
+      "settings": {
+        "custom_font": "kaushan_script_n4"
+      }
+    },
+    "ctm_hero_section_McUtBJ": {
+      "type": "ctm-hero-section",
+      "blocks": {
+        "cafe_jCrKnR": {
+          "type": "cafe",
+          "settings": {
+            "tab_title": "Lisbon Coffee",
+            "main_image": "shopify://shop_images/main-home-img-15_jpg.png",
+            "heading": "Cafe Heading",
+            "address": "123 Main St, City",
+            "phone": "0123-456789",
+            "email": "info@example.com",
+            "opening_hours": "Mon-Fri: 7am - 7pm\nSat-Sun: 8am - 5pm",
+            "button_label": "Contact Us",
+            "button_link": ""
+          }
+        },
+        "cafe_XBTfjC": {
+          "type": "cafe",
+          "settings": {
+            "tab_title": "Berlin Coffee",
+            "main_image": "shopify://shop_images/coffee-shop-393954_640.jpg",
+            "heading": "Cafe Heading",
+            "address": "123 Main St, Cityss",
+            "phone": "0123-456789",
+            "email": "info@example.com",
+            "opening_hours": "Mon-Fri: 7am - 7pm\nSat-Sun: 8am - 5pm",
+            "button_label": "Contact Us",
+            "button_link": ""
+          }
+        },
+        "cafe_XGzii4": {
+          "type": "cafe",
+          "settings": {
+            "tab_title": "Amsterdam Coffee",
+            "main_image": "shopify://shop_images/cafe-1869656_640.jpg",
+            "heading": "Amsterdam Coffee",
+            "address": "456 Market Lane, Downtown",
+            "phone": "0234-987654",
+            "email": "hello@flatwhite.com",
+            "opening_hours": "Mon-Fri: 8am - 6pm\nSat-Sun: 9am - 4pm",
+            "button_label": "Contact Us",
+            "button_link": "shopify://collections/coffee"
+          }
+        }
+      },
+      "block_order": [
+        "cafe_jCrKnR",
+        "cafe_XBTfjC",
+        "cafe_XGzii4"
+      ],
+      "name": "Switchable Coffee Contacts",
+      "settings": {}
     }
   },
   "order": [
     "image_with_text_PyYGfr",
     "custom_slider_kTaTiM",
     "featured_collection",
-    "custom_product_section_mNCari"
+    "custom_product_section_mNCari",
+    "image_banner_8fTJtc",
+    "ctm_review_section_HfTWYd",
+    "ctm_hero_section_McUtBJ"
   ]
 }
