@@ -1,0 +1,100 @@
+<section class="py-12 bg-[#fdf2d8] ">
+  <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-10">{{ section.settings.heading }}</h2>
+
+    <div class="flex flex-wrap sm:flex-col md:flex-row justify-center gap-6 sm:gap-8">
+
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        {% if product %}
+          <div class="group relative flex flex-col rounded-2xl overflow-hidden shadow-md transition hover:shadow-xl hover:-translate-y-1 duration-300
+                bg-white
+                w-full max-w-xs sm:max-w-sm md:max-w-[240px] lg:max-w-[300px] mx-auto
+                ">
+            <div class="relative overflow-hidden">
+              <img
+                src="{{ product.featured_image | image_url: width: 600, height: 400, crop: 'center' }}"
+                alt="{{ product.title | escape }}"
+                class="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                width=""
+                height="">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+            </div>
+
+            <div class="flex-1 p-4 sm:p-5 flex flex-col justify-between space-y-3">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition">
+                {{ product.title }}
+              </h3>
+              <p class="text-sm sm:text-base text-gray-500">{{ product.description | strip_html | truncatewords: 15 }}</p>
+              <div class="flex items-center space-x-3">
+                {% if product.compare_at_price > product.price %}
+                  <span class="text-lg sm:text-xl font-bold text-indigo-600">
+                    {{ product.price | money }}
+                  </span>
+                  <span class="text-base sm:text-lg text-gray-400 line-through">
+                    {{ product.compare_at_price | money }}
+                  </span>
+                  <span class="ml-2 text-xs sm:text-sm text-green-600 font-semibold">
+                    -{{ 100 | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%
+                  </span>
+                {% else %}
+                  <span class="text-lg sm:text-xl font-bold text-indigo-600">
+                    {{ product.price | money }}
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="p-4 sm:p-5 pt-0">
+              <a href="{{ product.url }}" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 sm:py-3 rounded-xl transition">
+                {{ block.settings.button_label }}
+              </a>
+            </div>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Coffee Types Grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Featured Coffee Types"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_block",
+        "name": "Coffee Type Card",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Select Coffee Type"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Text",
+            "default": "Shop Now"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 12,
+    "presets": [
+      {
+        "name": "Coffee Types Grid",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

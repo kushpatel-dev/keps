@@ -1,0 +1,39 @@
+{% assign font = section.settings.title_font %}
+<style>
+  {{ font | font_face: font_display: 'swap' }}
+</style>
+<section>
+  <div class="ctm-text-for-line" style="font-family: '{{ font.family }}', 'Work Sans', Arial, sans-serif; {{ section.settings.line_color | color_to_hex }};">
+    {{ section.settings.section_title }}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Line Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "Our Cafes"
+      }, {
+        "type": "color",
+        "id": "line_color",
+        "label": "Line Color",
+        "default": "#000000"
+      }, {
+        "type": "font_picker",
+        "id": "title_font",
+        "label": "Title Font",
+        "default": "work_sans_n4"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Line Section",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

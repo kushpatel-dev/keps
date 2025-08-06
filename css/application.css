@@ -19,3 +19,50 @@
 .ctm-review-text{
     @apply text-2xl md:text-3xl font-extrabold text-center text-gray-900 mb-3 leading-tight
 }
+
+
+
+/* ctm-hero-section.css */
+.contact-block-container {
+  @apply flex-1 flex flex-col justify-between gap-4 md:gap-6;
+}
+
+.contact-block-heading {
+  @apply text-xl md:text-2xl lg:text-4xl font-bold mb-2 md:mb-3 uppercase font-sans tracking-tight;
+}
+
+.contact-block-detail {
+  @apply text-sm md:text-lg lg:text-2xl mb-1 md:mb-2;
+}
+
+.contact-block-opening-hours {
+  @apply text-sm md:text-lg lg:text-2xl mb-3 md:mb-4 whitespace-pre-line;
+}
+
+.contact-block-btn {
+  @apply inline-block px-3 md:px-4 py-1.5 md:py-2 bg-black text-white font-mono text-[10px] md:text-sm lg:text-base font-bold tracking-wider rounded-sm border border-black shadow-sm hover:bg-gray-800 transition text-center w-[80px] md:w-[100px];
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.img-shake:hover {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+.image-block-container {
+  @apply w-full md:w-[500px] lg:w-[600px] xl:w-[760px] flex-shrink-0 mb-4 md:mb-0 overflow-hidden;
+}
+
+.image-block-main-img {
+  @apply rounded-lg border border-gray-200 shadow-sm w-full object-cover aspect-[8/5] md:aspect-[16/12] lg:aspect-[21/15] xl:aspect-[24/12] transition-transform duration-300 ease-in-out hover:opacity-90 hover:scale-102;
+}
+
+.image-block-placeholder {
+  @apply w-full h-[220px] md:h-[320px] lg:h-[450px] xl:h-[500px] bg-gray-100 rounded-lg flex items-center justify-center text-gray-400;
+}
+.ctm-text-for-line {
+  @apply text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 uppercase pt-10 px-2.5 bg-[#fdf2d8];
+}

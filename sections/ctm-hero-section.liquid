@@ -1,4 +1,4 @@
-<div class="bg-gray-50 min-h-screen py-6 w-full">
+<div class="bg-gray-50 py-6 w-full">
   <div class="w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md">
 
     <!-- LEFT: Vertical Tabs (Horizontal on mobile) -->
@@ -6,8 +6,8 @@
       {% for block in section.blocks %}
         <button
           type="button"
-          class="tab-btn transition-colors duration-200 border-gray-200 last:border-0 font-bold font-sans text-sm uppercase tracking-wide
-              h-14 md:h-40 w-full md:w-16 flex items-center justify-center
+          class="tab-btn transition-colors py-2 px-2.5 duration-200 border-gray-200 last:border-0 font-bold font-sans text-sm md:text-lg lg:text-xl uppercase tracking-wide
+              h-14 w-full md:h-auto md:w-14 lg:h-auto lg:w-16 flex items-center justify-center
               {% if forloop.first %}bg-black text-white{% else %}bg-white text-black hover:bg-black hover:text-white{% endif %}
               border-b md:border-r md:last:border-b-0 md:border-b-0"
           data-tab-index="{{ forloop.index0 }}"
@@ -21,36 +21,47 @@
     <!-- RIGHT: Image and Info -->
     <div class="flex-1 flex flex-col p-4 md:p-8 gap-6 md:gap-10">
       {% for block in section.blocks %}
-        <div class="tab-content w-full gap-6 md:gap-10 flex flex-col md:flex-row items-start {% unless forloop.first %}hidden{% endunless %}" data-tab-index="{{ forloop.index0 }}">
+        <div class="tab-content w-full gap-6 md:gap-10 flex flex-col md:flex-row justify-center items-center {% unless forloop.first %}hidden{% endunless %}" data-tab-index="{{ forloop.index0 }}">
 
           <!-- IMAGE Left -->
-          <div class="w-full md:w-[500px] flex-shrink-0 mb-4 md:mb-0">
+          <div class="image-block-container img-shake">
             {% if block.settings.main_image != blank %}
               <img
                 height=""
                 width=""
                 src="{{ block.settings.main_image | image_url: width: 1000 }}"
                 alt="{{ block.settings.heading | escape }}"
-                class="rounded-lg border border-gray-200 shadow-sm w-full object-cover aspect-[4/3]"
+                class="image-block-main-img"
                 loading="lazy">
             {% else %}
-              <div class="w-full h-[220px] md:h-[320px] bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">No Image</div>
+              <div class="image-block-placeholder">No Image</div>
             {% endif %}
           </div>
 
+
           <!-- TEXT Right -->
-          <div class="flex-1 flex flex-col justify-between gap-4 md:gap-6">
+          <div class="contact-block-container">
             <div>
-              <h3 class="text-sm md:text-lg lg:text-2xl font-bold mb-2 md:mb-3 uppercase font-sans tracking-tight">{{ block.settings.heading }}</h3>
-              <div class="text-sm md:text-lg lg:text-2xl mb-1 md:mb-2 whitespace-pre-line">{{ block.settings.address }}</div>
-              <div class="text-sm md:text-lg lg:text-2xl mb-1 md:mb-2">Tel: {{ block.settings.phone }}</div>
-              <div class="text-sm md:text-lg lg:text-2xl mb-1 md:mb-2">Email: {{ block.settings.email }}</div>
-              <div class="text-sm md:text-lg lg:text-2xl mb-3 md:mb-4 whitespace-pre-line">{{ block.settings.opening_hours | newline_to_br }}</div>
+              <h3 class="contact-block-heading">
+                {{ block.settings.heading }}
+              </h3>
+              <div class="contact-block-detail whitespace-pre-line">
+                {{ block.settings.address }}
+              </div>
+              <div class="contact-block-detail">
+                Tel: {{ block.settings.phone }}
+              </div>
+              <div class="contact-block-detail">
+                Email: {{ block.settings.email }}
+              </div>
+              <div class="contact-block-opening-hours">
+                {{ block.settings.opening_hours | newline_to_br }}
+              </div>
             </div>
             {% if block.settings.button_label != blank %}
               <a
                 href="{{ block.settings.button_link | default: '#' }}"
-                class="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-black text-white font-mono text-[10px] md:text-sm lg:text-base font-bold tracking-wider rounded-sm border border-black shadow-sm hover:bg-gray-800 transition text-center w-[80px] md:w-[100px]"
+                class="contact-block-btn"
                 target="_blank"
                 rel="noopener">
                 {{ block.settings.button_label }}

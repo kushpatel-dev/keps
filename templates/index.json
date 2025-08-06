@@ -213,6 +213,58 @@
         "show_text_below": false
       }
     },
+    "ctm_line_section_YziTg6": {
+      "type": "ctm-line-section",
+      "name": "Custom Line Section",
+      "settings": {
+        "section_title": "The Coffee that's right for you",
+        "line_color": "#df9494",
+        "title_font": "andada_pro_n4"
+      }
+    },
+    "ctm_product_GPDqxk": {
+      "type": "ctm-product",
+      "blocks": {
+        "product_block_GxGF3D": {
+          "type": "product_block",
+          "settings": {
+            "product": "caramel-sunrise",
+            "button_label": "Shop Now"
+          }
+        },
+        "product_block_VftzzK": {
+          "type": "product_block",
+          "settings": {
+            "product": "dark-matter",
+            "button_label": "Shop Now"
+          }
+        },
+        "product_block_AhEETb": {
+          "type": "product_block",
+          "settings": {
+            "product": "decaf-gold",
+            "button_label": "Shop Now"
+          }
+        },
+        "product_block_xbyqVr": {
+          "type": "product_block",
+          "settings": {
+            "product": "espresso-roast",
+            "button_label": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_GxGF3D",
+        "product_block_VftzzK",
+        "product_block_AhEETb",
+        "product_block_xbyqVr"
+      ],
+      "name": "Coffee Types Grid",
+      "settings": {
+        "heading": ""
+      }
+    },
     "ctm_review_section_HfTWYd": {
       "type": "ctm-review-section",
       "blocks": {
@@ -262,13 +314,13 @@
           "settings": {
             "tab_title": "Lisbon Coffee",
             "main_image": "shopify://shop_images/main-home-img-15_jpg.png",
-            "heading": "Cafe Heading",
-            "address": "123 Main St, City",
-            "phone": "0123-456789",
+            "heading": "Lisbon Coffee",
+            "address": "8957 Main St, City",
+            "phone": "456789-456789",
             "email": "info@example.com",
             "opening_hours": "Mon-Fri: 7am - 7pm\nSat-Sun: 8am - 5pm",
             "button_label": "Contact Us",
-            "button_link": ""
+            "button_link": "shopify://blogs/news"
           }
         },
         "cafe_XBTfjC": {
@@ -315,6 +367,8 @@
     "featured_collection",
     "custom_product_section_mNCari",
     "image_banner_8fTJtc",
+    "ctm_line_section_YziTg6",
+    "ctm_product_GPDqxk",
     "ctm_review_section_HfTWYd",
     "ctm_hero_section_McUtBJ"
   ]
