@@ -252,13 +252,29 @@
             "product": "espresso-roast",
             "button_label": "Shop Now"
           }
+        },
+        "product_block_t9MAff": {
+          "type": "product_block",
+          "settings": {
+            "product": "hazelnut-cream",
+            "button_label": "Shop Now"
+          }
+        },
+        "product_block_R3waLW": {
+          "type": "product_block",
+          "settings": {
+            "product": "breakfast-blend",
+            "button_label": "Shop Now"
+          }
         }
       },
       "block_order": [
         "product_block_GxGF3D",
         "product_block_VftzzK",
         "product_block_AhEETb",
-        "product_block_xbyqVr"
+        "product_block_xbyqVr",
+        "product_block_t9MAff",
+        "product_block_R3waLW"
       ],
       "name": "Coffee Types Grid",
       "settings": {
