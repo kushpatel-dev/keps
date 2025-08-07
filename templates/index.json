@@ -343,6 +343,18 @@
       ],
       "name": "Switchable Coffee Contacts",
       "settings": {}
+    },
+    "ctm_video_BaRJzA": {
+      "type": "ctm-video",
+      "name": "Video & Text Split Improved",
+      "settings": {
+        "heading": "Barista Schools & Careers",
+        "description": "We host courses covering everything from simple home brewing techniques to advanced latte art to allow you to learn the essential life skill of how to make truly great coffee.",
+        "button_text": "View More",
+        "button_link": "shopify://collections/coffee",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/230f9e233d7243eca3572b78ee9726ee.mp4",
+        "video_poster": "shopify://shop_images/Screenshot_19.png"
+      }
     }
   },
   "order": [
@@ -354,6 +366,7 @@
     "ctm_line_section_YziTg6",
     "ctm_product_GPDqxk",
     "ctm_review_section_HfTWYd",
-    "ctm_hero_section_McUtBJ"
+    "ctm_hero_section_McUtBJ",
+    "ctm_video_BaRJzA"
   ]
 }

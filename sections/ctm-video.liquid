@@ -1,0 +1,78 @@
+<section class="w-full bg-[#d7e5e4] py-8 md:py-14">
+  <div class="w-full flex flex-col-reverse lg:flex-row items-center gap-6 md:gap-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <!-- Right: Text Content -->
+    <div class="w-full lg:w-1/2 flex flex-col items-start justify-center gap-4 md:gap-5">
+      <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 leading-tight">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+        {{ section.settings.description }}
+      </p>
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-7 md:py-2 text-xs md:text-sm font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+    <!-- Left: Video -->
+    <div class="w-full lg:w-1/2 flex justify-center items-center">
+      <div class="rounded-3xl shadow-2xl overflow-hidden w-full aspect-video bg-black border-4 border-white/40">
+        {% if section.settings.video_url != blank %}
+          <video
+            src="{{ section.settings.video_url }}"
+            controls
+            poster="{{ section.settings.video_poster | img_url: '900x' }}"
+            class="w-full h-full object-cover"
+            style="min-height: 200px;"></video>
+        {% else %}
+          <div class="flex items-center justify-center w-full h-full min-h-[200px] text-gray-400 bg-gray-200">
+            No video selected
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Video & Text Split",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Barista Schools & Careers"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "We host courses covering everything from simple home brewing techniques to advanced latte art to allow you to learn the essential life skill of how to make truly great coffee."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View More"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "url",
+        "id": "video_url",
+        "label": "Video URL (mp4, webm, or YouTube embed link)"
+      }, {
+        "type": "image_picker",
+        "id": "video_poster",
+        "label": "Video Poster/Thumbnail"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video & Text Split Improved"
+      }
+    ]
+  }
+{% endschema %}
