@@ -8,7 +8,7 @@
           type="button"
           class="tab-btn transition-colors py-2 px-2.5 duration-200 border-gray-200 last:border-0 font-bold font-sans text-sm md:text-lg lg:text-xl uppercase tracking-wide
               h-14 w-full md:h-auto md:w-14 lg:h-auto lg:w-16 flex items-center justify-center
-              {% if forloop.first %}bg-black text-white{% else %}bg-white text-black hover:bg-black hover:text-white{% endif %}
+              {% if forloop.first %}bg-orange-950 text-white{% else %}bg-white text-orange-950 hover:bg-orange-950 hover:text-white{% endif %}
               border-b md:border-r md:last:border-b-0 md:border-b-0"
           data-tab-index="{{ forloop.index0 }}"
           style="writing-mode: vertical-rl; text-orientation: mixed; letter-spacing: 2px;"
@@ -92,15 +92,15 @@
     tabBtns.forEach((btn) => {
       btn.addEventListener('click', function () {
         tabBtns.forEach(b => {
-          b.classList.remove('bg-black', 'text-white');
-          b.classList.add('bg-white', 'text-black', 'hover:bg-black', 'hover:text-white');
+          b.classList.remove('bg-orange-950', 'text-white');
+          b.classList.add('bg-white', 'text-black', 'hover:bg-orange-950', 'hover:text-white');
           b.setAttribute('aria-selected', 'false');
         });
   
         tabContents.forEach(tc => tc.classList.add('hidden'));
   
-        btn.classList.add('bg-black', 'text-white');
-        btn.classList.remove('bg-white', 'text-black', 'hover:bg-black', 'hover:text-white');
+        btn.classList.add('bg-orange-950', 'text-white');
+        btn.classList.remove('bg-white', 'text-black', 'hover:bg-orange-950', 'hover:text-white');
         btn.setAttribute('aria-selected', 'true');
   
         const index = btn.getAttribute('data-tab-index');

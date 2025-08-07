@@ -1,0 +1,100 @@
+<section class="relative w-full overflow-hidden">
+  <!-- Full width background image -->
+  <div class="w-full">
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.banner_image | img_url: '1800x' }}"
+      alt="{{ section.settings.banner_image_alt }}"
+      class="w-full object-cover h-[400px] md:h-[600px]"
+      loading="lazy" />
+  </div>
+
+  <!-- Overlay content: centered text and button -->
+  <div class="ctm-img-banner-div">
+    <h2 class="ctm-img-h2">
+      {{ section.settings.banner_heading }}
+    </h2>
+    <a href="{{ section.settings.banner_button_url }}" class="bg-orange-900 hover:bg-orange-950 text-white font-semibold py-3 px-8 rounded-lg transition">
+      {{ section.settings.banner_button_text }}
+    </a>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('section.relative');
+  const bannerImage = section.querySelector('img');
+  const maxScale = 1.3; // Maximum zoom scale
+  const minScale = 1;   // Minimum zoom scale (default size)
+  const maxScroll = 300; // Max scroll for zoom effect
+  
+  // Function to handle zoom based on scroll
+  function zoomOnScroll() {
+    const scrollTop = window.scrollY;
+    let scale = minScale + (scrollTop / maxScroll) * (maxScale - minScale);
+    if (scale > maxScale) scale = maxScale;
+    bannerImage.style.transform = `scale(${scale})`;
+    bannerImage.style.transition = 'transform 0.2s ease-out';
+  }
+  
+  // Intersection Observer to monitor when section is 50% visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        // Add scroll listener and start zoom effect
+        window.addEventListener('scroll', zoomOnScroll);
+        zoomOnScroll(); // initial call to apply zoom right away
+      } else {
+        // Remove scroll listener and reset scale when less than 50% visible
+        window.removeEventListener('scroll', zoomOnScroll);
+        bannerImage.style.transform = `scale(${minScale})`;
+      }
+    });
+  }, { threshold: [0.5] });
+  
+  observer.observe(section);
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Full Width Image Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
+
+      },
+      {
+        "type": "text",
+        "id": "banner_image_alt",
+        "label": "Image Alt Text",
+        "default": "Banner image"
+      },
+      {
+        "type": "text",
+        "id": "banner_heading",
+        "label": "Banner Heading",
+        "default": "Welcome to Our Store"
+      },
+      {
+        "type": "text",
+        "id": "banner_button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      }, {
+        "type": "url",
+        "id": "banner_button_url",
+        "label": "Button URL"
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "Full Width Image Banner",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

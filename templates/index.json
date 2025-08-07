@@ -159,67 +159,25 @@
         "cta_link": "shopify://collections/coffee",
         "cta_label": "VIEW MORE",
         "product_collection": "coffee",
-        "products_limit": 2
+        "products_limit": 1
       }
     },
-    "image_banner_8fTJtc": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_c3yCn3": {
-          "type": "heading",
-          "settings": {
-            "heading": "MORE THAN JUST A COFFEE SHOP",
-            "heading_size": "h0"
-          }
-        },
-        "text_J3tbgw": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "buttons_h9GPCb": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_c3yCn3",
-        "text_J3tbgw",
-        "buttons_h9GPCb"
-      ],
-      "name": "t:sections.image-banner.presets.name",
+    "ctm_image_banner_Q8BVr4": {
+      "type": "ctm-image-banner",
+      "name": "Full Width Image Banner",
       "settings": {
-        "image": "shopify://shop_images/coffee-2306471_1280.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "banner_image": "shopify://shop_images/coffee-2306471_1280.jpg",
+        "banner_image_alt": "Banner image",
+        "banner_heading": "Where Every Cup Feels Like Home.",
+        "banner_button_text": "Shop Now",
+        "banner_button_url": "shopify://collections/frontpage"
       }
     },
     "ctm_line_section_YziTg6": {
       "type": "ctm-line-section",
       "name": "Custom Line Section",
       "settings": {
-        "section_title": "The Coffee that's right for you",
-        "line_color": "#df9494",
-        "title_font": "andada_pro_n4"
+        "section_title": "The Coffee that's right for you"
       }
     },
     "ctm_product_GPDqxk": {
@@ -229,6 +187,13 @@
           "type": "product_block",
           "settings": {
             "product": "caramel-sunrise",
+            "button_label": "Shop Now"
+          }
+        },
+        "product_block_QdYa3k": {
+          "type": "product_block",
+          "settings": {
+            "product": "hazelnut-cream",
             "button_label": "Shop Now"
           }
         },
@@ -260,25 +225,28 @@
             "button_label": "Shop Now"
           }
         },
-        "product_block_R3waLW": {
+        "product_block_DCYMp8": {
           "type": "product_block",
           "settings": {
-            "product": "breakfast-blend",
+            "product": "mocha-delight",
             "button_label": "Shop Now"
           }
         }
       },
       "block_order": [
         "product_block_GxGF3D",
+        "product_block_QdYa3k",
         "product_block_VftzzK",
         "product_block_AhEETb",
         "product_block_xbyqVr",
         "product_block_t9MAff",
-        "product_block_R3waLW"
+        "product_block_DCYMp8"
       ],
       "name": "Coffee Types Grid",
       "settings": {
-        "heading": ""
+        "heading": "",
+        "view_all_text": "View All",
+        "view_all_url": "shopify://collections/coffee"
       }
     },
     "ctm_review_section_HfTWYd": {
@@ -382,7 +350,7 @@
     "custom_slider_kTaTiM",
     "featured_collection",
     "custom_product_section_mNCari",
-    "image_banner_8fTJtc",
+    "ctm_image_banner_Q8BVr4",
     "ctm_line_section_YziTg6",
     "ctm_product_GPDqxk",
     "ctm_review_section_HfTWYd",

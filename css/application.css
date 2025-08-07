@@ -66,3 +66,26 @@
 .ctm-text-for-line {
   @apply text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 uppercase pt-10 px-2.5 bg-[#fdf2d8];
 }
+/* addtocart */
+.ctm-qty-style {
+  @apply bg-white rounded-lg text-gray-700 font-semibold text-center shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition;
+  border: none !important;
+}
+
+/* 
+image banner section 
+*/
+
+.ctm-img-banner-div {
+  @apply absolute inset-0 flex flex-col justify-center items-center text-center px-4;
+}
+.ctm-img-h2{
+  @apply !text-white text-3xl shadow-amber-950 md:text-[46px] font-bold drop-shadow-lg mb-6;
+}
+
+.ctm-bg label::before{
+  @apply !bg-orange-950;
+}
+.ctm-rounded-img{
+  @apply rounded-3xl;
+}
