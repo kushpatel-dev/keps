@@ -33,7 +33,7 @@
 }
 
 .contact-block-btn{
-  @apply inline-block px-4 md:px-5 py-2 md:py-3 bg-amber-900 text-white font-mono text-sm md:text-lg lg:text-xl font-bold tracking-wider rounded-sm border border-black shadow-sm hover:bg-gray-800 transition text-center w-[100px] md:w-[120px];
+  @apply inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
 }
 
 @keyframes shake {
@@ -83,4 +83,64 @@ image banner section
 }
 .ctm-rounded-img{
   @apply rounded-3xl;
+}
+
+.svg-wrapper svg path {
+  transition: fill 0.2s ease;
+}
+.svg-wrapper svg:hover path {
+  fill: red;
+}
+.ctm-drawer {
+  @apply rounded-[20px] border-x-4 border-y-2 px-0 border-gray-800 overflow-hidden transition-colors transition-shadow duration-200 hover:border-black hover:shadow-md flex items-center;
+}
+
+.ctm-cart-price span {
+  @apply !text-emerald-700 font-semibold text-[18px] tracking-wide transition-colors duration-200 hover:text-emerald-900;
+}
+
+
+.ctm-cart-price p {
+  @apply !text-emerald-700 font-semibold text-[18px] tracking-wide transition-colors duration-200 hover:text-emerald-900;
+}
+
+/* 
+
+*/
+.ctm-drawer-btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-[5px] font-bold text-2xl text-white bg-cover bg-center transition-all duration-300 ease-in-out overflow-hidden;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.16),
+              0 0 10px 0 #E48A3C;
+  background-image: linear-gradient(
+      to bottom,
+      #c79466,
+      rgba(222, 135, 61, 0.24)
+    ),
+    url("https://cdn.shopify.com/s/files/1/0757/7151/1022/files/money-7171360_1280.jpg?v=1754649088");
+}
+
+.ctm-drawer-btn:hover {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.16),
+              0 0 30px 0 #E48A3C;
+}
+
+/* Pseudo-elements for shopping cart icon */
+.ctm-drawer-btn:before,
+.ctm-drawer-btn:after {
+  content: ""; /* Font Awesome icon */
+  display: inline-block; /* prevents affecting layout width */
+  transition: transform 0.3s ease;
+}
+
+.ctm-drawer-btn:hover:after {
+  transform: scale(1);
+}
+
+.ctm-drawer-btn:hover:before {
+  transform: scale(1.2); /* scale effect but no width expansion */
+}
+
+.ctm-drawer-btn b {
+  @apply font-bold;
+  color: #FFD9B4;
 }

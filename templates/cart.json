@@ -9,6 +9,43 @@
  */
 {
   "sections": {
+    "1754641381a310c020": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4c8257c_TUFQnd": {
+          "type": "ai_gen_block_4c8257c",
+          "name": "Empty cart drawer",
+          "settings": {
+            "headline": "Your cart is empty",
+            "subtext": "Check out these collections",
+            "collection_1": "coffee",
+            "button_text_1": "Coffee",
+            "collection_2": "home-feature",
+            "button_text_2": "Home Furniture",
+            "collection_3": "",
+            "button_text_3": "Accessories",
+            "collection_4": "",
+            "button_text_4": "",
+            "collection_5": "",
+            "button_text_5": "",
+            "background_color": "#ffffff",
+            "text_color": "#121212",
+            "headline_size": 24,
+            "subtext_size": 14,
+            "button_text_color": "#121212",
+            "button_border_color": "#cccccc",
+            "button_hover_text_color": "#121212",
+            "button_hover_border_color": "#121212",
+            "button_text_size": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4c8257c_TUFQnd"
+      ],
+      "settings": {}
+    },
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
@@ -19,30 +56,29 @@
     },
     "cart-footer": {
       "type": "main-cart-footer",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "padding_top": 20,
-        "padding_bottom": 40
-      },
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {
-          }
+          "settings": {}
         },
         "buttons": {
           "type": "buttons",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
         "subtotal",
         "buttons"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
+    "1754641381a310c020",
     "cart-items",
     "cart-footer"
   ]

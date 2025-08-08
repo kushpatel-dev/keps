@@ -1,0 +1,269 @@
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-empty-cart-drawer-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    min-height: 400px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-empty-cart-drawer__content-{{ ai_gen_id }} {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .ai-empty-cart-drawer__headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: 500;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-empty-cart-drawer__subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtext_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 40px;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  .ai-empty-cart-drawer__collections-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .ai-empty-cart-drawer__collection-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 24px;
+    background-color: transparent;
+    color: {{ block.settings.button_text_color }};
+    border: 1px solid{{ block.settings.button_border_color }};
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ai-empty-cart-drawer__collection-button-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.button_hover_border_color }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-empty-cart-drawer-{{ ai_gen_id }} {
+      padding: 40px 20px;
+      min-height: 300px;
+    }
+
+    .ai-empty-cart-drawer__content-{{ ai_gen_id }} {
+      max-width: 280px;
+    }
+
+    .ai-empty-cart-drawer__headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.9 }}px;
+    }
+
+    .ai-empty-cart-drawer__subtext-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtext_size | times: 0.9 }}px;
+      margin-bottom: 32px;
+    }
+
+    .ai-empty-cart-drawer__collection-button-{{ ai_gen_id }} {
+      padding: 12px 20px;
+      font-size: {{ block.settings.button_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div id="custom-cart-drawer" class="{% if cart.item_count > 0 %}has-items{% else %}is-empty{% endif %}">
+
+  {% if cart.item_count > 0 %}
+    <!-- CART WITH PRODUCTS -->
+    <div class="cart-items space-y-4">
+      {% for item in cart.items %}
+        <div class="cart-item flex items-center gap-4">
+          <img
+            height=""
+            width=""
+            src="{{ item.image | img_url: '150x150' }}"
+            alt="{{ item.product.title }}"
+            class="w-16 h-16 object-cover rounded">
+          <div class="flex flex-col">
+            <span class="font-semibold">{{ item.product.title }}</span>
+            <span class="text-sm text-gray-600">Qty: {{ item.quantity }}</span>
+            <span class="text-sm font-medium">{{ item.final_line_price | money }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- TOTAL -->
+    <div class="cart-total mt-6 border-t pt-4 flex justify-between font-bold">
+      <span>Total</span>
+      <span>{{ cart.total_price | money }}</span>
+    </div>
+
+  {% else %}
+    <!-- EMPTY CART -->
+    <div class="empty-cart text-center py-8">
+      <h2 class="text-xl font-semibold mb-2">Your cart is empty</h2>
+      <p class="text-gray-600 mb-4">Check out our latest collections!</p>
+      <a href="/collections/all" class="bg-black text-white px-4 py-2 rounded">Shop Now</a>
+    </div>
+  {% endif %}
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Empty cart drawer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+        "default": "Your cart is empty"
+      },
+      {
+        "type": "text",
+        "id": "subtext",
+        "label": "Subtext",
+        "default": "Check out these collections"
+      },
+      {
+        "type": "header",
+        "content": "Collection buttons"
+      }, {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Collection 1"
+      }, {
+        "type": "text",
+        "id": "button_text_1",
+        "label": "Button text 1",
+        "default": "Coffee"
+      }, {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Collection 2"
+      }, {
+        "type": "text",
+        "id": "button_text_2",
+        "label": "Button text 2",
+        "default": "Home Furniture"
+      }, {
+        "type": "collection",
+        "id": "collection_3",
+        "label": "Collection 3"
+      }, {
+        "type": "text",
+        "id": "button_text_3",
+        "label": "Button text 3",
+        "default": "Accessories"
+      }, {
+        "type": "collection",
+        "id": "collection_4",
+        "label": "Collection 4"
+      }, {
+        "type": "text",
+        "id": "button_text_4",
+        "label": "Button text 4"
+      }, {
+        "type": "collection",
+        "id": "collection_5",
+        "label": "Collection 5"
+      }, {
+        "type": "text",
+        "id": "button_text_5",
+        "label": "Button text 5"
+      }, {
+        "type": "header",
+        "content": "Style"
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#ffffff"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#121212"
+      }, {
+        "type": "range",
+        "id": "headline_size",
+        "min": 18,
+        "max": 36,
+        "step": 2,
+        "unit": "px",
+        "label": "Headline size",
+        "default": 24
+      }, {
+        "type": "range",
+        "id": "subtext_size",
+        "min": 12,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Subtext size",
+        "default": 14
+      }, {
+        "type": "header",
+        "content": "Button style"
+      }, {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button text color",
+        "default": "#121212"
+      }, {
+        "type": "color",
+        "id": "button_border_color",
+        "label": "Button border color",
+        "default": "#cccccc"
+      }, {
+        "type": "color",
+        "id": "button_hover_text_color",
+        "label": "Button hover text color",
+        "default": "#121212"
+      }, {
+        "type": "color",
+        "id": "button_hover_border_color",
+        "label": "Button hover border color",
+        "default": "#121212"
+      }, {
+        "type": "range",
+        "id": "button_text_size",
+        "min": 10,
+        "max": 16,
+        "step": 1,
+        "unit": "px",
+        "label": "Button text size",
+        "default": 12
+      }
+    ],
+    "presets": [
+      {
+        "name": "Empty cart drawer"
+      }
+    ]
+  }
+{% endschema %}
