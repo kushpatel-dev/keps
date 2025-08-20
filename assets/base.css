@@ -3597,3 +3597,9 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+@font-face {
+  font-family: 'subway-novella';
+  src: url('https://cdn.shopify.com/s/files/1/0757/7151/1022/files/SubwayNovellaDEMO.ttf?v=1755498751');
+}
