@@ -364,7 +364,7 @@
           "settings": {
             "logo": "shopify://shop_images/main-home-new-clients-1_png.png",
             "alt_text": "Brand logo",
-            "fallback_text": "Brand Name"
+            "fallback_text": "the demo"
           }
         },
         "logo_PkJMX9": {
@@ -410,7 +410,7 @@
       "name": "Brand Marquee",
       "settings": {
         "heading": "Our trusted Supplies",
-        "speed": 25
+        "speed": 60
       }
     }
   },
