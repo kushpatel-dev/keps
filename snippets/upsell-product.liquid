@@ -1,5 +1,5 @@
 {%- comment -%}  Reusable upsell for cart drawer.
-                        Usage: {% render 'upsell-product', handle: 'caramel-sunrise' %} 
+                          Usage: {% render 'upsell-product', handle: 'caramel-sunrise' %} 
 {%- endcomment -%}
 
 
@@ -107,7 +107,7 @@
     
       // Dawn-specific: re-render the drawer using the cart-drawer element if available
      function refreshDrawer() {
-  return fetch(`${window.Shopify.routes.root}cart?section_id=cart-drawer`)
+      return fetch(`${window.Shopify.routes.root}cart?section_id=cart-drawer`)
     .then(response => response.text())
     .then(html => {
       const parsed = new DOMParser().parseFromString(html, 'text/html');
@@ -115,7 +115,15 @@
       document.querySelector('cart-drawer').replaceWith(newDrawer);
     })
     .catch(e => console.error(e));
-}
+    }.then(() => getCart())
+    .then(cart => {
+      document.querySelectorAll('.cart-count-bubble span[aria-hidden="true"]').forEach(el => {
+    el.textContent = cart.item_count;
+      });
+      document.querySelectorAll('.cart-count-bubble').forEach(el => {
+    el.style.display = cart.item_count > 0 ? '' : 'none';
+      });
+    })
       // Handle clicks
       document.addEventListener('click', function(e) {
     const btn = e.target.closest('.upsell-add');
