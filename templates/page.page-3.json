@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "page_3_section_jJj7dK": {
+      "type": "page-3-section",
+      "name": "Offers Section",
+      "settings": {
+        "subtitle": "Offer",
+        "icon": "shopify://shop_images/Vector.png",
+        "title": "Reserve Your Stay [30 Days] In Advance And Enjoy [Exclusive Savings] On All Suites And Villas.",
+        "description": "<p>At Serenova, we believe that luxury should arrive gently. That’s why our curated offers are designed not just to save you more but to give you more. More stillness. More time. More unforgettable experiences.</p>",
+        "cta_text": "VIEW ALL OFFERS",
+        "cta_link": "#",
+        "leaf_mask": "shopify://shop_images/Group_1622_1.png",
+        "house_mask": "shopify://shop_images/Object.png",
+        "main_image": "shopify://shop_images/image_11_aa6c0821-ab9a-4f35-8926-6ec9b94441b9.png",
+        "main_image_border": "shopify://shop_images/Rectangle_523.svg",
+        "secondary_image": "shopify://shop_images/b10958c24c486aedb77b3e024c86d7f530290746.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_3_section_jJj7dK"
+  ]
+}

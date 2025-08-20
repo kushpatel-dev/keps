@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "page_1_section_CYX4rR": {
+      "type": "page-1-section",
+      "name": "Warranty Section",
+      "settings": {
+        "image": "shopify://shop_images/image_2.png",
+        "image_alt": "People selecting eyeglass frames",
+        "heading": "OUR EXCLUSIVE",
+        "warranty_text": "WARRANTY",
+        "body": "We are thankful that our patients choose to come to us for eyewear. We care about satisfaction so offer a warranty on our prescriptions and glasses. If you are not happy with frames or lenses, bring them back within 90 days so we can remake them. If we cannot find eyewear to improve vision, we offer a partial refund within 90 days of purchase date. We also offer a one year scratch warranty on our lenses.",
+        "note": "*Some exclusions apply",
+        "button_text": "Learn More",
+        "button_link": "shopify://policies/privacy-policy",
+        "text_color": "#174532"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_1_section_CYX4rR"
+  ]
+}

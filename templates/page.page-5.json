@@ -1,0 +1,94 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "page_5_sec_RTGaTj": {
+      "type": "page-5-sec",
+      "blocks": {
+        "step_xQWd9b": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/SVG.png",
+            "step_number": "01",
+            "title": "Initial Consultation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
+          }
+        },
+        "step_BTCRGj": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/SVG_2.png",
+            "step_number": "02",
+            "title": "Schematic Design",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
+          }
+        },
+        "step_TYAhm4": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Link_3.png",
+            "step_number": "03",
+            "title": "Design fipproval",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
+          }
+        },
+        "step_AnCeTk": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/Link_2.png",
+            "step_number": "04",
+            "title": "Purchase &Installation",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
+          }
+        },
+        "step_F6PdpU": {
+          "type": "step",
+          "settings": {
+            "icon": "shopify://shop_images/SVG_1.png",
+            "step_number": "05",
+            "title": "Project HandOver",
+            "description": "Elit lacus vivamus sollicitudin sapien congue accusantium doloremque laudantium,"
+          }
+        }
+      },
+      "block_order": [
+        "step_xQWd9b",
+        "step_BTCRGj",
+        "step_TYAhm4",
+        "step_AnCeTk",
+        "step_F6PdpU"
+      ],
+      "name": "Project Timeline",
+      "settings": {
+        "section_subheading": "OUR PROCESS",
+        "section_heading": "Project Implementation Process",
+        "bg_color": "#f9fafb",
+        "subheading_color": "#878e88",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "number_color": "#008060",
+        "icon_bg_color": "#8f7745",
+        "line_color": "#796f51"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_5_sec_RTGaTj"
+  ]
+}
