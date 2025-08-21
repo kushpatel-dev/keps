@@ -83,76 +83,78 @@
     </article>
   </div>
   <script>
-    (function() {
-      // Avoid duplicate listeners if snippet re-renders
-      if (window.__upsellInit) return;
-      window.__upsellInit = true;
-    
-      function addToCart(variantId, qty = 1) {
-    return fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ id: variantId, quantity: qty }),
-      credentials: 'same-origin'
-    }).then(r => {
-      if (!r.ok) throw r;
-      return r.json();
-    });
-      }
-    
-      function getCart() {
-    return fetch('/cart.js', { headers: { 'Accept': 'application/json' }})
-      .then(r => r.json());
-      }
-    
-      // Dawn-specific: re-render the drawer using the cart-drawer element if available
-     function refreshDrawer() {
+  (function() {
+    // Avoid duplicate listeners if snippet re-renders
+    if (window.__upsellInit) return;
+    window.__upsellInit = true;
+
+    function addToCart(variantId, qty = 1) {
+      return fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ id: variantId, quantity: qty }),
+        credentials: 'same-origin'
+      }).then(r => {
+        if (!r.ok) throw r;
+        return r.json();
+      });
+    }
+
+    function getCart() {
+      return fetch('/cart.js', { headers: { 'Accept': 'application/json' }})
+        .then(r => r.json());
+    }
+
+    // Dawn-specific: re-render the drawer using the cart-drawer element if available
+    function refreshDrawer() {
       return fetch(`${window.Shopify.routes.root}cart?section_id=cart-drawer`)
-    .then(response => response.text())
-    .then(html => {
-      const parsed = new DOMParser().parseFromString(html, 'text/html');
-      const newDrawer = parsed.querySelector('cart-drawer');
-      document.querySelector('cart-drawer').replaceWith(newDrawer);
-    })
-    .catch(e => console.error(e));
-    }.then(() => getCart())
-    .then(cart => {
-      document.querySelectorAll('.cart-count-bubble span[aria-hidden="true"]').forEach(el => {
-    el.textContent = cart.item_count;
-      });
-      document.querySelectorAll('.cart-count-bubble').forEach(el => {
-    el.style.display = cart.item_count > 0 ? '' : 'none';
-      });
-    })
-      // Handle clicks
-      document.addEventListener('click', function(e) {
-    const btn = e.target.closest('.upsell-add');
-    if (!btn) return;
-    
-    e.preventDefault();
-    btn.disabled = true;
-    const originalText = btn.textContent;
-    btn.textContent = 'Adding…';
-    
-    const id = btn.getAttribute('data-variant-id');
-    addToCart(id, 1)
-      .then(() => refreshDrawer())
-      .then(() => {
-        // Ensure drawer is open
-        const opener = document.querySelector('cart-drawer, .drawer');
-        if (opener && opener.open === false && typeof opener.openDrawer === 'function') {
-          opener.openDrawer();
-        }
-        btn.textContent = 'Added';
-        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 900);
-      })
-      .catch(() => {
-        btn.textContent = 'Try again';
-        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1200);
-      });
-      }, { passive: false });
-    })();
-  </script>
+        .then(response => response.text())
+        .then(html => {
+          const parsed = new DOMParser().parseFromString(html, 'text/html');
+          const newDrawer = parsed.querySelector('cart-drawer');
+          document.querySelector('cart-drawer').replaceWith(newDrawer);
+        })
+        .catch(e => console.error(e));
+    }
+
+    // Handle clicks
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.upsell-add');
+      if (!btn) return;
+
+      e.preventDefault();
+      btn.disabled = true;
+      const originalText = btn.textContent;
+      btn.textContent = 'Adding…';
+
+      const id = btn.getAttribute('data-variant-id');
+      addToCart(id, 1)
+        .then(() => refreshDrawer())
+        .then(() => getCart())
+        .then(cart => {
+          document.querySelectorAll('.cart-count-bubble span[aria-hidden="true"]').forEach(el => {
+            el.textContent = cart.item_count;
+          });
+          document.querySelectorAll('.cart-count-bubble').forEach(el => {
+            el.style.display = cart.item_count > 0 ? '' : 'none';
+          });
+        })
+        .then(() => {
+          // Ensure drawer is open
+          const opener = document.querySelector('cart-drawer, .drawer');
+          if (opener && opener.open === false && typeof opener.openDrawer === 'function') {
+            opener.openDrawer();
+          }
+          btn.textContent = 'Added';
+          setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 900);
+        })
+        .catch(() => {
+          btn.textContent = 'Try again';
+          setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1200);
+        });
+    }, { passive: false });
+  })();
+</script>
 
   {% style %}
     /* Scoped styles: only affect the drawer upsell */
