@@ -19,6 +19,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -37,32 +38,47 @@
         "padding_bottom": 36
       }
     },
-    "ctm_product_grid_b8UEj4": {
+    "ctm_product_grid_TfJfmP": {
       "type": "ctm-product-grid",
-      "disabled": true,
-      "name": "product grid",
+      "name": "Collection Grid",
       "settings": {
-        "products_per_page": 12,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
+        "collection": "coffee",
+        "products_per_page": 10,
+        "container_width": 1000,
+        "columns_desktop": 3,
+        "columns_tablet": 1,
+        "grid_gap": "6",
+        "image_width": 500,
+        "image_height": 300,
+        "show_second_image": true,
+        "show_vendor": true,
+        "show_product_description": false,
+        "show_sale_badge": true,
+        "sale_badge_text": "SALE",
+        "quick_add": true,
+        "add_to_cart_text": "Add to Cart",
         "enable_filtering": true,
-        "filter_type": "horizontal",
         "enable_sorting": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "desktop_position": "drawer",
+        "sidebar_size": "small",
+        "max_price": 100,
+        "availability_title": "AVAILABILITY",
+        "price_title": "PRICE",
+        "brand_title": "BRAND",
+        "size_title": "SIZE",
+        "best_selling_title": "BEST SELLING",
+        "show_best_selling": true,
+        "show_brand_filter": true,
+        "show_size_filter": true,
+        "size_options": "S, M, L, XL, XXL",
+        "enable_load_more": true,
+        "load_more_text": "Load More Products"
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "ctm_product_grid_b8UEj4"
+    "ctm_product_grid_TfJfmP"
   ]
 }

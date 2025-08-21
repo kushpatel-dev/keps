@@ -283,7 +283,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -503,7 +502,15 @@
       "password": "Password",
       "password_confirm": "Confirm password",
       "submit": "Reset password"
+    },
+     "collections": {
+    "general": {
+      "all": "All"
+    },
+    "sorting": {
+      "title": "Sort by"
     }
+  }
   },
   "gift_cards": {
     "issued": {

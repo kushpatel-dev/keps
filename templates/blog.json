@@ -22,20 +22,27 @@
         "padding_bottom": 36
       }
     },
-    "ctm_image_banner_WFgKpq": {
-      "type": "ctm-image-banner",
-      "name": "Full Width Image Banner",
+    "featured_blog_JNnHME": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "banner_image": "shopify://shop_images/bglight-roast-coffee.jpg",
-        "banner_image_alt": "Banner image",
-        "banner_heading": "Welcome to Our Store",
-        "banner_button_text": "Shop Now",
-        "banner_button_url": "shopify://blogs/news"
+        "blog": "",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "ctm_image_banner_WFgKpq"
+    "featured_blog_JNnHME"
   ]
 }
