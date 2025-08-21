@@ -11,8 +11,48 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "ctm_footer_LV4yBx": {
+      "type": "ctm-footer",
+      "name": "Extended Footer",
+      "settings": {
+        "bg_color": "#e9dac7",
+        "text_color": "#000000",
+        "font_family": "sans-serif",
+        "newsletter_subtitle": "Subscribe to our",
+        "newsletter_title": "EARLY BIRDS COFFEE",
+        "heading_size": 24,
+        "input_placeholder": "Enter Email",
+        "button_label": "SUBSCRIBE",
+        "button_bg": "#4b1407",
+        "button_text_color": "#ffffff",
+        "newsletter_box_width": 190,
+        "newsletter_box_height": 80,
+        "social_heading": "FOLLOW US",
+        "social_heading_size": 20,
+        "icon_bg": "#d7953f",
+        "icon_color": "#000000",
+        "facebook_link": "#",
+        "facebook_icon": "shopify://shop_images/Vector_81065c78-fded-48a0-9718-ed36025b078f.png",
+        "twitter_link": "#",
+        "twitter_icon": "shopify://shop_images/Vector_1_047bf9ba-be86-404d-98c4-d46eaaee7839.png",
+        "youtube_link": "#",
+        "youtube_icon": "shopify://shop_images/008-youtube_1.png",
+        "instagram_link": "#",
+        "instagram_icon": "shopify://shop_images/011-instagram_1.png"
+      }
+    },
+    "footer_line_XaJymM": {
+      "type": "footer-line",
+      "name": "Minimal Footer",
+      "settings": {
+        "left_text": "© 2020 EARLY BIRDS COFFEE",
+        "icon": "shopify://shop_images/heart.png",
+        "right_text": "// KEPS"
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -30,6 +70,8 @@
     }
   },
   "order": [
+    "ctm_footer_LV4yBx",
+    "footer_line_XaJymM",
     "footer"
   ]
 }

@@ -147,6 +147,63 @@
         "padding_bottom": 36
       }
     },
+    "marquee_LQi8Cz": {
+      "type": "marquee",
+      "blocks": {
+        "logo_db6KhP": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/main-home-new-clients-1_png.png",
+            "alt_text": "Brand logo",
+            "fallback_text": "the demo"
+          }
+        },
+        "logo_PkJMX9": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/main-home-new-clients-5_png.png",
+            "alt_text": "Brand logo",
+            "fallback_text": "Brand Name"
+          }
+        },
+        "logo_M8WLHk": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/main-home-new-clients-4_png.png",
+            "alt_text": "Brand logo",
+            "fallback_text": "Brand Name"
+          }
+        },
+        "logo_8JPqiJ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/main-home-new-clients-2_png.png",
+            "alt_text": "Brand logo",
+            "fallback_text": "Brand Name"
+          }
+        },
+        "logo_QgDBqm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/main-home-new-clients-3_png.png",
+            "alt_text": "Brand logo",
+            "fallback_text": "Brand Name"
+          }
+        }
+      },
+      "block_order": [
+        "logo_db6KhP",
+        "logo_PkJMX9",
+        "logo_M8WLHk",
+        "logo_8JPqiJ",
+        "logo_QgDBqm"
+      ],
+      "name": "Brand Marquee",
+      "settings": {
+        "heading": "Our trusted Supplies",
+        "speed": 10
+      }
+    },
     "custom_product_section_mNCari": {
       "type": "custom-product-section",
       "name": "Custom Featured Products",
@@ -355,76 +412,19 @@
         "video_url": "https://cdn.shopify.com/videos/c/o/v/230f9e233d7243eca3572b78ee9726ee.mp4",
         "video_poster": "shopify://shop_images/Screenshot_19.png"
       }
-    },
-    "marquee_LQi8Cz": {
-      "type": "marquee",
-      "blocks": {
-        "logo_db6KhP": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/main-home-new-clients-1_png.png",
-            "alt_text": "Brand logo",
-            "fallback_text": "the demo"
-          }
-        },
-        "logo_PkJMX9": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/main-home-new-clients-5_png.png",
-            "alt_text": "Brand logo",
-            "fallback_text": "Brand Name"
-          }
-        },
-        "logo_M8WLHk": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/main-home-new-clients-4_png.png",
-            "alt_text": "Brand logo",
-            "fallback_text": "Brand Name"
-          }
-        },
-        "logo_8JPqiJ": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/main-home-new-clients-2_png.png",
-            "alt_text": "Brand logo",
-            "fallback_text": "Brand Name"
-          }
-        },
-        "logo_QgDBqm": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/main-home-new-clients-3_png.png",
-            "alt_text": "Brand logo",
-            "fallback_text": "Brand Name"
-          }
-        }
-      },
-      "block_order": [
-        "logo_db6KhP",
-        "logo_PkJMX9",
-        "logo_M8WLHk",
-        "logo_8JPqiJ",
-        "logo_QgDBqm"
-      ],
-      "name": "Brand Marquee",
-      "settings": {
-        "heading": "Our trusted Supplies",
-        "speed": 60
-      }
     }
   },
   "order": [
     "image_with_text_PyYGfr",
     "custom_slider_kTaTiM",
     "featured_collection",
+    "marquee_LQi8Cz",
     "custom_product_section_mNCari",
     "ctm_image_banner_Q8BVr4",
     "ctm_line_section_YziTg6",
     "ctm_product_GPDqxk",
     "ctm_review_section_HfTWYd",
     "ctm_hero_section_McUtBJ",
-    "ctm_video_BaRJzA",
-    "marquee_LQi8Cz"
+    "ctm_video_BaRJzA"
   ]
 }

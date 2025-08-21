@@ -1,0 +1,262 @@
+<section class="w-full py-8" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="w-full px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
+
+    <!-- Newsletter Left -->
+    <div class="flex text-center lg:text-left flex-col relative" style="width:{{ section.settings.newsletter_box_width }}px; height:{{ section.settings.newsletter_box_height }}px;">
+      <p class="uppercase text-sm" style="color: {{ section.settings.text_color }}; font-family: {{ section.settings.font_family }};">
+        {{ section.settings.newsletter_subtitle }}
+      </p>
+      <h2 class="tracking-wide font-extrabold" style="font-size: {{ section.settings.heading_size }}px; font-family: {{ section.settings.font_family }};color: {{ section.settings.text_color }};">
+        {{ section.settings.newsletter_title }}
+      </h2>
+    </div>
+
+    <!-- Newsletter Form -->
+    <form
+      method="post"
+      action="{{ routes.newsletter_subscribe_url }}"
+      class="flex relative w-full max-w-[340px] rounded-full overflow-hidden shadow-lg">
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="{{ section.settings.input_placeholder }}"
+        required
+        class="flex-grow px-4 py-3 text-gray-800 bg-amber-50 focus:outline-none">
+      <button
+        type="submit"
+        class="px-6 py-3 font-semibold transition-all"
+        style="background-color: {{ section.settings.button_bg }}; color: {{ section.settings.button_text_color }}; font-family: {{ section.settings.font_family }};">
+        {{ section.settings.button_label }}
+      </button>
+    </form>
+
+    <!-- Social Media Icons -->
+    <div class="flex items-center gap-4">
+      <span class="text-xl font-bold" style="font-size: {{ section.settings.social_heading_size }}px; font-family: {{ section.settings.font_family }};">
+        {{ section.settings.social_heading }}
+      </span>
+      <div class="flex gap-3 items-center">
+        {% if section.settings.facebook_link != blank %}
+          <a
+            href="{{ section.settings.facebook_link }}"
+            target="_blank"
+            class="w-10 h-10 rounded-full transition">
+            {% if section.settings.facebook_icon != blank %}
+              <img
+                height=""
+                width=""
+                src="{{ section.settings.facebook_icon | image_url: width: 24 }}"
+                alt="Facebook"
+                class="w-10 h-10">
+            {% else %}
+              <i class="fab fa-facebook-f"></i>
+            {% endif %}
+          </a>
+        {% endif %}
+
+        {% if section.settings.twitter_link != blank %}
+          <a
+            href="{{ section.settings.twitter_link }}"
+            target="_blank"
+            class="w-10 h-10 rounded-full transition">
+            {% if section.settings.twitter_icon != blank %}
+              <img
+                height=""
+                width=""
+                src="{{ section.settings.twitter_icon | image_url: width: 24 }}"
+                alt="Twitter"
+                class="w-10 h-10">
+            {% else %}
+              <i class="fab fa-twitter"></i>
+            {% endif %}
+          </a>
+        {% endif %}
+
+        {% if section.settings.youtube_link != blank %}
+          <a
+            href="{{ section.settings.youtube_link }}"
+            target="_blank"
+            class="w-10 h-10 rounded-full transition">
+            {% if section.settings.youtube_icon != blank %}
+              <img
+                height=""
+                width=""
+                src="{{ section.settings.youtube_icon | image_url: width: 24 }}"
+                alt="YouTube"
+                class="w-10 h-10">
+            {% else %}
+              <i class="fab fa-youtube"></i>
+            {% endif %}
+          </a>
+        {% endif %}
+
+        {% if section.settings.instagram_link != blank %}
+          <a
+            href="{{ section.settings.instagram_link }}"
+            target="_blank"
+            class="w-10 h-10 rounded-full transition">
+            {% if section.settings.instagram_icon != blank %}
+              <img
+                height=""
+                width=""
+                src="{{ section.settings.instagram_icon | image_url: width: 24 }}"
+                alt="Instagram"
+                class="w-10 h-10">
+            {% else %}
+              <i class="fab fa-instagram"></i>
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Extended Footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#372E2D"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_family",
+        "label": "Font Family",
+        "default": "sans-serif"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_subtitle",
+        "label": "Newsletter Subtitle",
+        "default": "Subscribe to our"
+      }, {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title",
+        "default": "NEWSLETTER"
+      }, {
+        "type": "range",
+        "id": "heading_size",
+        "min": 16,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading Font Size",
+        "default": 28
+      }, {
+        "type": "text",
+        "id": "input_placeholder",
+        "label": "Input Placeholder",
+        "default": "Enter Email"
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "SUBSCRIBE"
+      }, {
+        "type": "color",
+        "id": "button_bg",
+        "label": "Button Background",
+        "default": "#D7953F"
+      }, {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#ffffff"
+      }, {
+        "type": "range",
+        "id": "newsletter_box_width",
+        "min": 150,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "Newsletter Box Width",
+        "default": 270
+      }, {
+        "type": "range",
+        "id": "newsletter_box_height",
+        "min": 60,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "label": "Newsletter Box Height",
+        "default": 80
+      }, {
+        "type": "text",
+        "id": "social_heading",
+        "label": "Social Heading",
+        "default": "FOLLOW US"
+      }, {
+        "type": "range",
+        "id": "social_heading_size",
+        "min": 14,
+        "max": 36,
+        "step": 2,
+        "unit": "px",
+        "label": "Social Heading Font Size",
+        "default": 20
+      }, {
+        "type": "color",
+        "id": "icon_bg",
+        "label": "Icon Background",
+        "default": "#D7953F"
+      }, {
+        "type": "color",
+        "id": "icon_color",
+        "label": "Icon Color",
+        "default": "#000000"
+      }, {
+        "type": "text",
+        "id": "facebook_link",
+        "label": "Facebook URL"
+      }, {
+        "type": "image_picker",
+        "id": "facebook_icon",
+        "label": "Facebook Icon"
+      }, {
+        "type": "text",
+        "id": "twitter_link",
+        "label": "Twitter URL"
+      }, {
+        "type": "image_picker",
+        "id": "twitter_icon",
+        "label": "Twitter Icon"
+      }, {
+        "type": "text",
+        "id": "youtube_link",
+        "label": "YouTube URL"
+      }, {
+        "type": "image_picker",
+        "id": "youtube_icon",
+        "label": "YouTube Icon"
+      }, {
+        "type": "text",
+        "id": "instagram_link",
+        "label": "Instagram URL"
+      }, {
+        "type": "image_picker",
+        "id": "instagram_icon",
+        "label": "Instagram Icon"
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Extended Footer",
+        "category": "Footer"
+      }
+    ]
+  }
+{% endschema %}

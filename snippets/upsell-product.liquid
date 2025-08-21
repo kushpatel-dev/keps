@@ -1,93 +1,85 @@
-{%- comment -%}  Reusable upsell for cart drawer.
-                          Usage: {% render 'upsell-product', handle: 'caramel-sunrise' %} 
+{%- comment -%} Reusable upsell for cart drawer.
+Usage: {% render 'upsell-product', handle: 'caramel-sunrise' %}
 {%- endcomment -%}
 
-
-{%- assign upsell_handle = handle | default: 'caramel-sunrise' -%}
-{%- assign upsell_product = all_products[upsell_handle] -%}
 {%- if section.settings.quick_add == 'standard' -%}
-
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{% assign container_upsell = false %}
+
+{% for item in cart.items %}
+{% if item.product.handle == 'caramel-sunrise' %}
+{% assign container_upsell = true %}
+{% endif %}
+{% endfor %}
+{% unless container_upsell %}
+{%- assign upsell_handle = handle | default: 'caramel-sunrise' -%}
+{%- assign upsell_product = all_products[upsell_handle] -%}
+
 {%- if upsell_product and upsell_product.available -%}
-  <div
-    class="drawer__upsell"
-    role="complementary"
-    aria-label="Upsell">
-    <h3 class="drawer__upsell-title">You may also like</h3>
+<div class="drawer__upsell" role="complementary" aria-label="Upsell">
+  <h3 class="drawer__upsell-title">You may also like</h3>
 
-    <!-- Mini horizontal card, tidy for drawers -->
-    <article class="upsell-mini">
-      <a href="{{ upsell_product.url }}" class="upsell-mini__media">
-        {%- if upsell_product.featured_image -%}
-          <img
-            src="{{ upsell_product.featured_image | image_url: width: 200, height: 200, crop: 'center' }}"
-            alt="{{ upsell_product.featured_image.alt | escape }}"
-            width="100"
-            height="100"
-            loading="lazy">
-        {%- endif -%}
+  <!-- Mini horizontal card, tidy for drawers -->
+  <article class="upsell-mini">
+    <a href="{{ upsell_product.url }}" class="upsell-mini__media">
+      {%- if upsell_product.featured_image -%}
+      <img src="{{ upsell_product.featured_image | image_url: width: 200, height: 200, crop: 'center' }}"
+        alt="{{ upsell_product.featured_image.alt | escape }}" width="100" height="100" loading="lazy">
+      {%- endif -%}
+    </a>
+
+    <div class="upsell-mini__content">
+      <a href="{{ upsell_product.url }}" class="upsell-mini__title">
+        {{ upsell_product.title }}
       </a>
-
-      <div class="upsell-mini__content">
-        <a href="{{ upsell_product.url }}" class="upsell-mini__title">
-          {{ upsell_product.title }}
-        </a>
-        <div class="upsell-mini__price">
-          {{ upsell_product.price | money }}
-        </div>
-
-        {%- comment -%}Use quick add if your Dawn version supports it{%- endcomment -%}
-        {%- if upsell_quick_add -%}
-          {%- render 'card-product'
-            ,
- card_product: upsell_product
-            ,
- media_aspect_ratio: 'square'
-            ,
- image_shape: 'default'
-            ,
- show_secondary_image: false
-            ,
- show_vendor: false
-            ,
- show_rating: false
-            ,
- lazy_load: true
-            ,
- skip_styles: true
-            ,
- quick_add: 'standard'
-            ,
- section_id: section.id
-          -%}
-        {%- else -%}
-          <form
-            method="post"
-            action="/cart/add"
-            class="upsell-mini__form">
-            <input
-              type="hidden"
-              name="id"
-              value="{{ upsell_product.selected_or_first_available_variant.id }}">
-            <button
-              type="button"
-              class="button button--primary button--small upsell-add"
-              data-variant-id="{{ upsell_product.selected_or_first_available_variant.id }}">
-              Add to cart
-            </button>
-          </form>
-        {%- endif -%}
+      <div class="upsell-mini__price">
+        {{ upsell_product.price | money }}
       </div>
-    </article>
-  </div>
-  <script>
-  (function() {
+
+      {%- if upsell_quick_add -%}
+      {%- render 'card-product'
+      ,
+      card_product: upsell_product
+      ,
+      media_aspect_ratio: 'square'
+      ,
+      image_shape: 'default'
+      ,
+      show_secondary_image: false
+      ,
+      show_vendor: false
+      ,
+      show_rating: false
+      ,
+      lazy_load: true
+      ,
+      skip_styles: true
+      ,
+      quick_add: 'standard'
+      ,
+      section_id: section.id
+      -%}
+      {%- else -%}
+      <form method="post" action="/cart/add" class="upsell-mini__form">
+        <input type="hidden" name="id" value="{{ upsell_product.selected_or_first_available_variant.id }}">
+        <button type="button" class="button button--primary button--small upsell-add"
+          data-variant-id="{{ upsell_product.selected_or_first_available_variant.id }}">
+          Add to cart
+        </button>
+      </form>
+      {%- endif -%}
+    </div>
+  </article>
+</div>
+<script>
+  (function () {
     // Avoid duplicate listeners if snippet re-renders
     if (window.__upsellInit) return;
     window.__upsellInit = true;
 
+    // --- Add to cart helper
     function addToCart(variantId, qty = 1) {
       return fetch('/cart/add.js', {
         method: 'POST',
@@ -100,25 +92,41 @@
       });
     }
 
-    function getCart() {
-      return fetch('/cart.js', { headers: { 'Accept': 'application/json' }})
-        .then(r => r.json());
-    }
-
-    // Dawn-specific: re-render the drawer using the cart-drawer element if available
+    // --- Drawer refresh (your improved version)
     function refreshDrawer() {
       return fetch(`${window.Shopify.routes.root}cart?section_id=cart-drawer`)
         .then(response => response.text())
         .then(html => {
           const parsed = new DOMParser().parseFromString(html, 'text/html');
-          const newDrawer = parsed.querySelector('cart-drawer');
-          document.querySelector('cart-drawer').replaceWith(newDrawer);
+
+          const newItems = parsed.querySelector('cart-drawer-items');
+          const newUpsell = parsed.querySelector('.drawer__upsell');
+          const newFooter = parsed.querySelector('.drawer__footer');
+
+          const drawer = document.querySelector('cart-drawer');
+
+          if (newItems && drawer.querySelector('cart-drawer-items')) {
+            drawer.querySelector('cart-drawer-items').replaceWith(newItems);
+          }
+
+          const existingUpsell = drawer.querySelector('.drawer__upsell');
+          if (existingUpsell && newUpsell) {
+            existingUpsell.replaceWith(newUpsell);
+          } else if (existingUpsell && !newUpsell) {
+            existingUpsell.remove();
+          } else if (!existingUpsell && newUpsell) {
+            drawer.querySelector('.drawer__footer').insertAdjacentElement('beforebegin', newUpsell);
+          }
+
+          if (newFooter && drawer.querySelector('.drawer__footer')) {
+            drawer.querySelector('.drawer__footer').replaceWith(newFooter);
+          }
         })
         .catch(e => console.error(e));
     }
 
-    // Handle clicks
-    document.addEventListener('click', function(e) {
+    // --- Click handler
+    document.addEventListener('click', function (e) {
       const btn = e.target.closest('.upsell-add');
       if (!btn) return;
 
@@ -130,21 +138,7 @@
       const id = btn.getAttribute('data-variant-id');
       addToCart(id, 1)
         .then(() => refreshDrawer())
-        .then(() => getCart())
-        .then(cart => {
-          document.querySelectorAll('.cart-count-bubble span[aria-hidden="true"]').forEach(el => {
-            el.textContent = cart.item_count;
-          });
-          document.querySelectorAll('.cart-count-bubble').forEach(el => {
-            el.style.display = cart.item_count > 0 ? '' : 'none';
-          });
-        })
         .then(() => {
-          // Ensure drawer is open
-          const opener = document.querySelector('cart-drawer, .drawer');
-          if (opener && opener.open === false && typeof opener.openDrawer === 'function') {
-            opener.openDrawer();
-          }
           btn.textContent = 'Added';
           setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 900);
         })
@@ -153,68 +147,71 @@
           setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 1200);
         });
     }, { passive: false });
+
   })();
 </script>
 
-  {% style %}
-    /* Scoped styles: only affect the drawer upsell */
-    .drawer__upsell {
-      padding: 16px 16px 8px;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-    .drawer__upsell-title {
-      margin: 0 0 12px;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
+{% style %}
+/* Scoped styles: only affect the drawer upsell */
+.drawer__upsell {
+padding: 16px 16px 8px;
+border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.drawer__upsell-title {
+margin: 0 0 12px;
+font-size: 1.4rem;
+font-weight: 600;
+}
 
-    .upsell-mini {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 12px;
-      align-items: center;
-    }
+.upsell-mini {
+display: grid;
+grid-template-columns: 100px 1fr;
+gap: 12px;
+align-items: center;
+}
 
-    .upsell-mini__media {
-      display: block;
-      width: 100px;
-      height: 100px;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #f6f6f6;
-    }
-    .upsell-mini__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+.upsell-mini__media {
+display: block;
+width: 100px;
+height: 100px;
+border-radius: 8px;
+overflow: hidden;
+background: #f6f6f6;
+}
+.upsell-mini__media img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+}
 
-    .upsell-mini__content {
-      display: grid;
-      gap: 6px;
-      align-content: start;
-    }
-    .upsell-mini__title {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      color: inherit;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .upsell-mini__price {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-    .upsell-mini__form .button {
-      padding: 8px 10px;
-      width: max-content;
-    }
-    .button--small {
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-  {% endstyle %}
+.upsell-mini__content {
+display: grid;
+gap: 6px;
+align-content: start;
+}
+.upsell-mini__title {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+color: inherit;
+text-decoration: none;
+font-weight: 600;
+}
+.upsell-mini__price {
+font-size: 1.4rem;
+font-weight: 600;
+}
+.upsell-mini__form .button {
+padding: 8px 10px;
+width: max-content;
+}
+.button--small {
+font-size: 1.2rem;
+line-height: 1;
+}
+{% endstyle %}
 {%- endif -%}
+
+{% endunless %}

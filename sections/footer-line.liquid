@@ -1,0 +1,56 @@
+<section class="w-full bg-black py-6">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-x-8">
+    <!-- Left Text -->
+    <span class="text-white text-center text-base font-normal">
+      {{ section.settings.left_text }}
+    </span>
+
+    <!-- Divider -->
+    <span class="text-white text-center text-base mx-1">|</span>
+
+    <!-- Icon + Credits -->
+    <span class="flex items-center gap-2 text-white text-center text-base font-normal">
+      {% if section.settings.icon != blank %}
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.icon | image_url: width: 24, height: 24 }}"
+          alt="Logo"
+          class="w-6 h-6"
+          loading="lazy">
+      {% endif %}
+      {{ section.settings.right_text }}
+    </span>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Footer",
+    "tag": "section",
+    "class": "footer-custom",
+    "settings": [
+      {
+        "type": "text",
+        "id": "left_text",
+        "label": "Left footer text",
+        "default": "© 2020 Don Pablo Coffee"
+      }, {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Footer icon"
+      }, {
+        "type": "text",
+        "id": "right_text",
+        "label": "Right credits text",
+        "default": "// TECHYSCOUTS"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Minimal Footer",
+        "category": "Footer"
+      }
+    ]
+  }
+{% endschema %}
