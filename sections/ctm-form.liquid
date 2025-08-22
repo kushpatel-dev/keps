@@ -1,0 +1,208 @@
+{% schema %}
+  {
+    "name": "Contact Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Get in Touch"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "We’d love to hear from you! Please fill out the form below."
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "number",
+        "id": "padding_x",
+        "label": "Horizontal Padding (px)",
+        "default": 20
+      }, {
+        "type": "number",
+        "id": "padding_y",
+        "label": "Vertical Padding (px)",
+        "default": 40
+      }, {
+        "type": "text",
+        "id": "slider_label",
+        "label": "Slider Label",
+        "default": "Rate your experience"
+      }, {
+        "type": "range",
+        "id": "slider_min",
+        "label": "Slider Min",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "slider_max",
+        "label": "Slider Max",
+        "default": 10,
+        "min": 1,
+        "max": 100,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "slider_step",
+        "label": "Slider Step",
+        "default": 1,
+        "min": 1,
+        "max": 10,
+        "step": 1
+      }, {
+        "type": "checkbox",
+        "id": "button_gradient",
+        "label": "Use Gradient Button?",
+        "default": true
+      }, {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button Solid Color",
+        "default": "#111827"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="cont-wrapper relative w-full" style="background: {{ section.settings.background }}; padding-top:{{ section.settings.padding_y }}px; padding-bottom:{{ section.settings.padding_y }}px; padding-left:{{ section.settings.padding_x }}px; padding-right:{{ section.settings.padding_x }}px;">
+  <div class="max-w-3xl mx-auto text-center mb-10">
+    {% if section.settings.heading != blank %}
+      <h2 class="cont-heading text-3xl md:text-4xl font-bold mb-4">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+    {% if section.settings.description != blank %}
+      <p class="cont-desc text-lg text-gray-600">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+  </div>
+
+  <!-- Contact Form -->
+  <form
+    method="post"
+    action="/contact#contact_form"
+    id="contact_form"
+    class="cont-form max-w-2xl mx-auto space-y-6">
+    <input
+      type="hidden"
+      name="form_type"
+      value="contact" />
+    <input
+      type="hidden"
+      name="utf8"
+      value="✓" />
+
+    <!-- Name -->
+    <div>
+      <label for="cont-name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input
+        id="cont-name"
+        type="text"
+        name="contact[name]"
+        required
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="cont-email" class="block text-sm font-medium text-gray-700">Email</label>
+      <input
+        id="cont-email"
+        type="email"
+        name="contact[email]"
+        required
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label for="cont-message" class="block text-sm font-medium text-gray-700">Message</label>
+      <textarea
+        id="cont-message"
+        name="contact[body]"
+        rows="4"
+        required
+        class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+    </div>
+
+    <!-- Range Slider -->
+    <div>
+      <label for="cont-slider" class="block text-sm font-medium text-gray-700 mb-2">
+        {{ section.settings.slider_label }}
+      </label>
+      <div class="flex items-center space-x-4">
+        <input
+          type="range"
+          id="cont-slider"
+          name="contact[slider]"
+          min="{{ section.settings.slider_min }}"
+          max="{{ section.settings.slider_max }}"
+          step="{{ section.settings.slider_step }}"
+          value="{{ section.settings.slider_min }}"
+          class="cont-slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" />
+        <span id="cont-slider-value" class="text-sm font-medium text-gray-700">
+          {{ section.settings.slider_min }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <button
+        type="submit"
+        class="cont-submit px-6 py-3 text-white font-semibold rounded-lg shadow transition
+          {% if section.settings.button_gradient %}
+            bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90
+          {% endif %}
+        "
+        {% unless section.settings.button_gradient %}
+        style="background-color: {{ section.settings.button_color }}"
+        {% endunless %}>
+        Send Message
+      </button>
+    </div>
+  </form>
+</section>
+
+{% stylesheet %}
+  .cont-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #4f46e5;
+    /* indigo */
+    cursor: pointer;
+  }
+  .cont-slider::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #4f46e5;
+    cursor: pointer;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  document.addEventListener("DOMContentLoaded", function() {
+    const slider = document.getElementById("cont-slider");
+    const output = document.getElementById("cont-slider-value");
+    if (slider && output) {
+      output.textContent = slider.value;
+      slider.addEventListener("input", () => {
+        output.textContent = slider.value;
+      });
+    }
+  });
+{% endjavascript %}

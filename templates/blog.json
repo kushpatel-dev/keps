@@ -22,13 +22,13 @@
         "padding_bottom": 36
       }
     },
-    "featured_blog_JNnHME": {
+    "featured_blog_xrMfnF": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "blog": "",
+        "blog": "news",
         "post_limit": 3,
-        "heading": "Blog posts",
+        "heading": "The Roaster’s Journal",
         "heading_size": "h1",
         "columns_desktop": 3,
         "show_view_all": true,
@@ -43,6 +43,6 @@
   },
   "order": [
     "main",
-    "featured_blog_JNnHME"
+    "featured_blog_xrMfnF"
   ]
 }

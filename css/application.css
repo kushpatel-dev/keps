@@ -150,3 +150,9 @@ font-family:"subway-novella";
 
 }
 
+@media screen and (min-width: 990px) {
+  .ctm-blog {
+    max-width: 90.6rem !important;
+    padding: 0 !important;
+  }
+}
