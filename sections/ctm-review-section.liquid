@@ -1,8 +1,22 @@
 <div class="w-full bg-white py-12">
   <div class="max-w-8xl mx-auto">
-    <div class="flex flex-col-reverse md:flex-row md:divide-x divide-gray-200">
+   <div class="flex flex-col-reverse 
+  md:flex-row 
+  {% if section.settings.layout_direction == 'rtl' %}
+    md:flex-row-reverse md:divide-x-reverse
+  {% else %}
+    md:flex-row md:divide-x
+  {% endif %}
+  divide-gray-200">
+
       <!-- Left: Review -->
-      <div class="w-full md:w-1/2 flex items-center justify-center px-6 md:px-10 min-h-[250px] relative overflow-hidden">
+     <div class="w-full md:w-1/2 flex items-center justify-center
+  {% if section.settings.layout_direction == 'rtl' %}
+    md:pl-10
+  {% else %}
+    md:pr-10
+  {% endif %}
+  px-6 min-h-[250px] relative overflow-hidden">
         {% if section.settings.custom_font != blank %}
           <style>
             #CustomFontWrapper-{{ section.id }} {
@@ -94,7 +108,13 @@
       </div>
 
       <!-- Right: Image -->
-      <div class="w-full md:w-1/2 flex items-center justify-center px-6 md:px-10 max-h-[250px] md:min-h-[350px] bg-gray-50 overflow-hidden">
+      <div class="w-full md:w-1/2 flex items-center justify-center
+  {% if section.settings.layout_direction == 'rtl' %}
+    md:pr-10
+  {% else %}
+    md:pl-10
+  {% endif %}
+  px-6 max-h-[250px] md:min-h-[350px] overflow-hidden">
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
             <div class="image-slide transition-all duration-300 ease-in-out {% unless forloop.first %}hidden{% endunless %}" data-index="{{ forloop.index0 }}">
@@ -104,7 +124,7 @@
                   width=""
                   src="{{ block.settings.image | image_url: width: 600 }}"
                   alt="Review Image"
-                  class="sm:max-w-[350px] sm:max-h-[150px] md:max-w-[450px] md:max-h-[250px] lg:max-w-[550px] lg:max-h-[350px] rounded-lg shadow-lg mx-auto" />
+                  class="sm:max-w-[350px] sm:max-h-[150px] md:max-w-[550px] md:max-h-[350px] lg:max-w-[650px] lg:max-h-[450px] rounded-lg shadow-lg mx-auto" />
               {% else %}
                 <div class="w-full h-[250px] flex items-center justify-center bg-gray-200 rounded">
                   <span class="text-gray-400">No image selected</span>
@@ -174,7 +194,23 @@
         "id": "custom_font",
         "label": "Custom Font",
         "default": "work_sans_n4"
-      }
+      },{
+  "type": "select",
+  "id": "layout_direction",
+  "label": "Layout Direction",
+  "default": "ltr",
+  "options": [
+    {
+      "value": "ltr",
+      "label": "Text Left / Image Right"
+    },
+    {
+      "value": "rtl",
+      "label": "Image Left / Text Right"
+    }
+  ]
+}
+
     ],
     "blocks": [
       {

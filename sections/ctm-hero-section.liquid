@@ -1,5 +1,5 @@
-<div class="bg-gray-50 py-6 w-full">
-  <div class="w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md">
+<div class="bg-gray-50 py-6 w-full color-{{ section.settings.color_scheme }}">
+  <div class="w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md color-{{ section.settings.color_scheme }}">
 
     <!-- LEFT: Vertical Tabs (Horizontal on mobile) -->
     <div class="flex md:flex-col flex-row items-stretch border-b md:border-b-0 md:border-r border-gray-200">
@@ -112,7 +112,14 @@
 {% schema %}
   {
     "name": "Switchable Coffee",
-    "settings": [],
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      }
+    ],
     "blocks": [
       {
         "type": "cafe",

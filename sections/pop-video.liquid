@@ -35,7 +35,7 @@
     {% endif %}
   </div>
 
-  <div class="relative max-w-screen-xl mx-auto">
+  <div class="relative max-w-screen-3xl mx-auto">
     <div
       id="slider-{{ section_id }}"
       class="flex overflow-x-auto gap-{{ section.settings.gap | divided_by: 4 }} snap-x snap-mandatory scroll-smooth pb-16"
@@ -78,25 +78,37 @@
           </div>
 
           {% unless block.settings.product == blank %}
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent text-white p-4">
-              <p class="font-semibold text-base">{{ block.settings.product.title }}</p>
-              <a
-                href="{{ block.settings.product.url }}"
-                class="
-                  inline-block mt-2 px-4 py-2 bg-[{{ section.settings.button_bg_color }}] text-[{{ section.settings.button_text_color }}]
-                  rounded font-medium text-sm
-                "
-              >
-                View Product
-              </a>
-            </div>
+           <div 
+  class="absolute inset-x-0 bottom-0 
+         bg-gradient-to-t from-black/80 via-black/30 to-transparent 
+         text-white p-6 
+         flex flex-col items-center justify-end text-center">
+  
+  <p class="ctm-p-font font-semibold text-lg drop-shadow-md">
+    {{ block.settings.product.title }}
+  </p>
+  
+  <a
+    href="{{ block.settings.product.url }}"
+    class="
+      inline-block mt-3 px-5 py-2.5 
+      rounded-lg font-medium text-sm 
+      bg-[{{ section.settings.button_bg_color }}] 
+      text-[{{ section.settings.button_text_color }}] 
+      shadow-md hover:scale-105 transition-transform duration-300
+    "
+  >
+    View Product
+  </a>
+</div>
+
           {% endunless %}
         </div>
       {% endfor %}
     </div>
 
     {% if section.settings.show_arrows %}
-      <div class="absolute inset-y-0 left-0 flex items-center z-10">
+      <div class="absolute inset-y-0 left-0 flex items-center z-1">
         <button
           type="button"
           class="prev-slide ml-3 w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-700 shadow-md hover:bg-indigo-100 hover:text-indigo-600 transition"
@@ -115,7 +127,7 @@
         </button>
       </div>
 
-      <div class="absolute inset-y-0 right-0 flex items-center z-10">
+      <div class="absolute inset-y-0 right-0 flex items-center z-1">
         <button
           type="button"
           class="next-slide mr-3 w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-700 shadow-md hover:bg-indigo-100 hover:text-indigo-600 transition"

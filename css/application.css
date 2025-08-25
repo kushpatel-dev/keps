@@ -160,3 +160,7 @@ font-family:"subway-novella";
 .ctm-button-color button{
 @apply bg-[#fae8bf] text-gray-900 hover:bg-[#fdf2d8];
 }
+
+.ctm-p-font{
+@apply md:text-3xl;
+}

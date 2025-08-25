@@ -312,29 +312,29 @@
         "video_WXaCdh": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/4795437-uhd_2160_4096_25fps.mp4",
-            "product": ""
+            "html5_video": "shopify://files/videos/8604914-hd_1080_1920_30fps.mp4",
+            "product": "caramel-sunrise"
           }
         },
         "video_EtqCB6": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/4374506-hd_1080_1920_25fps.mp4",
-            "product": ""
+            "html5_video": "shopify://files/videos/5095328-uhd_2160_3840_25fps.mp4",
+            "product": "dark-matter"
           }
         },
         "video_dJ4Ejb": {
           "type": "video",
           "settings": {
             "html5_video": "shopify://files/videos/4973718-hd_1080_1920_25fps.mp4",
-            "product": ""
+            "product": "decaf-gold"
           }
         },
         "video_DbfEf9": {
           "type": "video",
           "settings": {
             "html5_video": "shopify://files/videos/4374508-sd_540_960_25fps.mp4",
-            "product": ""
+            "product": "mocha-delight"
           }
         }
       },
@@ -416,7 +416,9 @@
         "cafe_XGzii4"
       ],
       "name": "Switchable Coffee Contacts",
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
+      }
     },
     "ctm_video_BaRJzA": {
       "type": "ctm-video",
@@ -468,7 +470,8 @@
       ],
       "name": "Review Carousel With Image",
       "settings": {
-        "custom_font": "kaushan_script_n4"
+        "custom_font": "kaushan_script_n4",
+        "layout_direction": "rtl"
       }
     }
   },
