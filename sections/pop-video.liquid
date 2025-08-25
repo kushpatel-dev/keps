@@ -1,0 +1,200 @@
+{% assign section_id = section.id | replace: '+', '' %}
+{% assign videos = section.blocks | where: 'type', 'video' %}
+{% assign background_placeholder_video_id = '15bb622f402f43929d26fab60c13fd21' %}
+
+{% if videos.size == 0 %}
+  {% break %}
+{% endif %}
+
+<section
+  id="DP--{{ section_id }}"
+  class="relative py-{{ section.settings.top_padding | divided_by: 4 }} px-4 md:px-8 bg-[{{ section.settings.background_color }}] text-[{{ section.settings.text_color }}] color-{{ section.settings.color_scheme }}"
+>
+  {% if section.settings.anchor_id != blank %}
+    <div id="{{ section.settings.anchor_id | remove: '#' | handleize }}" class="h-0 overflow-hidden"></div>
+  {% endif %}
+
+  <div class="max-w-screen-xl mx-auto text-center">
+    {% if section.settings.heading != blank %}
+      <h2
+        class="
+          text-center mb-{{ section.settings.heading_description_spacing | divided_by: 4 }}
+          text-[calc(28px*{{ section.settings.heading_size | times: 0.01 }})]
+          tracking-[{{ section.settings.heading_letter_spacing }}px]
+          font-bold
+        "
+      >
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="text-[calc(16px*{{ section.settings.description_size | times: 0.01 }})] leading-relaxed mb-10">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="relative max-w-screen-xl mx-auto">
+    <div
+      id="slider-{{ section_id }}"
+      class="flex overflow-x-auto gap-{{ section.settings.gap | divided_by: 4 }} snap-x snap-mandatory scroll-smooth pb-16"
+    >
+      {% for block in videos %}
+        <div
+          class="snap-center flex-shrink-0 w-[95vw] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] relative rounded-lg overflow-hidden group"
+          {{ block.shopify_attributes }}
+        >
+          <div class="relative w-full ">
+            {% if block.settings.html5_video != blank %}
+              {% assign video = block.settings.html5_video %}
+              <video
+                class="w-full md:h-[300px] lg:h-[400px] xl:h-[475px] 2xl:h-[580px] object-cover"
+                playsinline
+                loop
+                muted
+                loading="lazy"
+                autoplay
+                poster="{{ video.preview_image | image_url: width: 1200 }}"
+              >
+                {% for source in video.sources %}
+                  {% if source.format == 'mp4' or source.format == 'mov' %}
+                    <source src="{{ source.url }}">
+                  {% endif %}
+                {% endfor %}
+              </video>
+            {% else %}
+              <video
+                class="w-full h-full object-cover"
+                playsinline
+                loop
+                muted
+                loading="lazy"
+                autoplay
+              >
+                <source src="https://cdn.shopify.com/videos/c/o/v/{{ background_placeholder_video_id }}.mp4">
+              </video>
+            {% endif %}
+          </div>
+
+          {% unless block.settings.product == blank %}
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent text-white p-4">
+              <p class="font-semibold text-base">{{ block.settings.product.title }}</p>
+              <a
+                href="{{ block.settings.product.url }}"
+                class="
+                  inline-block mt-2 px-4 py-2 bg-[{{ section.settings.button_bg_color }}] text-[{{ section.settings.button_text_color }}]
+                  rounded font-medium text-sm
+                "
+              >
+                View Product
+              </a>
+            </div>
+          {% endunless %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_arrows %}
+      <div class="absolute inset-y-0 left-0 flex items-center z-10">
+        <button
+          type="button"
+          class="prev-slide ml-3 w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-700 shadow-md hover:bg-indigo-100 hover:text-indigo-600 transition"
+          aria-label="Previous slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="absolute inset-y-0 right-0 flex items-center z-10">
+        <button
+          type="button"
+          class="next-slide mr-3 w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-700 shadow-md hover:bg-indigo-100 hover:text-indigo-600 transition"
+          aria-label="Next slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('#slider-{{ section_id }}');
+    const next = document.querySelector('.next-slide');
+    const prev = document.querySelector('.prev-slide');
+
+    if (container && next && prev) {
+      next.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
+      prev.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video carousel (Tailwind)",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Featured Videos" },
+    { "type": "range", "id": "heading_size","label": "Heading size", "min": 60, "max": 150, "step": 5, "default": 100, "unit": "%" },
+    { "type": "range", "id": "heading_letter_spacing","label": "Heading letter spacing", "min": 0, "max": 10, "step": 0.5, "default": 0, "unit": "px" },
+    { "type": "richtext", "id": "description", "label": "Description" },
+    { "type": "range", "id": "description_size","label": "Description size", "min": 60, "max": 150, "step": 5, "default": 100, "unit": "%" },
+    { "type": "range", "id": "heading_description_spacing","label": "Heading to description spacing", "min": 0, "max": 80, "step": 5, "default": 20, "unit": "px" },
+    { "type": "range", "id": "gap", "label": "Item gap", "min": 5, "max": 30, "step": 5, "default": 10, "unit": "px" },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#121212" },
+    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#ffffff" },
+    { "type": "color", "id": "button_bg_color", "label": "Button background", "default": "#121212" },
+    { "type": "color_background", "id": "background_color", "label": "Background color" },
+    { "type": "range", "id": "top_padding", "label": "Top padding", "min": 0, "max": 100, "default": 40, "unit": "px" },
+    { "type": "range", "id": "bottom_padding", "label": "Bottom padding", "min": 0, "max": 100, "default": 40, "unit": "px" },
+    { "type": "text", "id": "anchor_id", "label": "Anchor ID (optional)" },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        { "type": "video", "id": "html5_video", "label": "Hosted Video" },
+        { "type": "product", "id": "product", "label": "Product (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video carousel (Tailwind)",
+      "blocks": [
+        { "type": "video" },
+        { "type": "video" },
+        { "type": "video" }
+      ]
+    }
+  ]
+}
+{% endschema %}

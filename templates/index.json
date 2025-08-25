@@ -306,6 +306,64 @@
         "view_all_url": "shopify://collections/coffee"
       }
     },
+    "pop_video_X44Cix": {
+      "type": "pop-video",
+      "blocks": {
+        "video_WXaCdh": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/4795437-uhd_2160_4096_25fps.mp4",
+            "product": ""
+          }
+        },
+        "video_EtqCB6": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/4374506-hd_1080_1920_25fps.mp4",
+            "product": ""
+          }
+        },
+        "video_dJ4Ejb": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/4973718-hd_1080_1920_25fps.mp4",
+            "product": ""
+          }
+        },
+        "video_DbfEf9": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/4374508-sd_540_960_25fps.mp4",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_WXaCdh",
+        "video_EtqCB6",
+        "video_dJ4Ejb",
+        "video_DbfEf9"
+      ],
+      "name": "Video carousel (Tailwind)",
+      "settings": {
+        "heading": "Customer Favorites",
+        "heading_size": 100,
+        "heading_letter_spacing": 0,
+        "description": "",
+        "description_size": 100,
+        "heading_description_spacing": 20,
+        "gap": 10,
+        "show_arrows": true,
+        "text_color": "#121212",
+        "button_text_color": "#ffffff",
+        "button_bg_color": "#121212",
+        "background_color": "",
+        "top_padding": 40,
+        "bottom_padding": 40,
+        "anchor_id": "",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
+      }
+    },
     "ctm_review_section_HfTWYd": {
       "type": "ctm-review-section",
       "blocks": {
@@ -423,6 +481,7 @@
     "ctm_image_banner_Q8BVr4",
     "ctm_line_section_YziTg6",
     "ctm_product_GPDqxk",
+    "pop_video_X44Cix",
     "ctm_review_section_HfTWYd",
     "ctm_hero_section_McUtBJ",
     "ctm_video_BaRJzA"

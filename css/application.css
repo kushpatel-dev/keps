@@ -156,3 +156,7 @@ font-family:"subway-novella";
     padding: 0 !important;
   }
 }
+
+.ctm-button-color button{
+@apply bg-[#fae8bf] text-gray-900 hover:bg-[#fdf2d8];
+}
