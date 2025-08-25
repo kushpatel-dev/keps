@@ -349,7 +349,7 @@
         "heading": "Customer Favorites",
         "heading_size": 100,
         "heading_letter_spacing": 0,
-        "description": "",
+        "description": "<p>this  is a best coffee in this  shop</p>",
         "description_size": 100,
         "heading_description_spacing": 20,
         "gap": 10,
@@ -362,47 +362,6 @@
         "bottom_padding": 40,
         "anchor_id": "",
         "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
-      }
-    },
-    "ctm_review_section_HfTWYd": {
-      "type": "ctm-review-section",
-      "blocks": {
-        "review_Yjx6Vp": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "review": "Their cappuccino is always smooth, rich, and perfectly balanced.",
-            "author": "Ella Ferns",
-            "image": "shopify://shop_images/pexels-kaboompics-6347.jpg"
-          }
-        },
-        "review_VATXpa": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "review": "The aroma hits you the moment you walk in.",
-            "author": "Mark Joseph",
-            "image": "shopify://shop_images/pexels-ifreestock-585753.jpg"
-          }
-        },
-        "review_TWqhxp": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "review": "You can taste the passion in every cup here",
-            "author": "keps",
-            "image": "shopify://shop_images/coffee-4334647_640.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "review_Yjx6Vp",
-        "review_VATXpa",
-        "review_TWqhxp"
-      ],
-      "name": "Review Carousel With Image",
-      "settings": {
-        "custom_font": "kaushan_script_n4"
       }
     },
     "ctm_hero_section_McUtBJ": {
@@ -470,6 +429,47 @@
         "video_url": "https://cdn.shopify.com/videos/c/o/v/230f9e233d7243eca3572b78ee9726ee.mp4",
         "video_poster": "shopify://shop_images/Screenshot_19.png"
       }
+    },
+    "ctm_review_section_HfTWYd": {
+      "type": "ctm-review-section",
+      "blocks": {
+        "review_Yjx6Vp": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "Their cappuccino is always smooth, rich, and perfectly balanced.",
+            "author": "Ella Ferns",
+            "image": "shopify://shop_images/pexels-kaboompics-6347.jpg"
+          }
+        },
+        "review_VATXpa": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "The aroma hits you the moment you walk in.",
+            "author": "Mark Joseph",
+            "image": "shopify://shop_images/pexels-ifreestock-585753.jpg"
+          }
+        },
+        "review_TWqhxp": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "You can taste the passion in every cup here",
+            "author": "keps",
+            "image": "shopify://shop_images/coffee-4334647_640.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "review_Yjx6Vp",
+        "review_VATXpa",
+        "review_TWqhxp"
+      ],
+      "name": "Review Carousel With Image",
+      "settings": {
+        "custom_font": "kaushan_script_n4"
+      }
     }
   },
   "order": [
@@ -482,8 +482,8 @@
     "ctm_line_section_YziTg6",
     "ctm_product_GPDqxk",
     "pop_video_X44Cix",
-    "ctm_review_section_HfTWYd",
     "ctm_hero_section_McUtBJ",
-    "ctm_video_BaRJzA"
+    "ctm_video_BaRJzA",
+    "ctm_review_section_HfTWYd"
   ]
 }
