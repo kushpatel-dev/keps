@@ -9,8 +9,8 @@
           <!-- Image Left -->
           <div class="md:w-3/5 w-full flex items-center justify-center mb-6 md:mb-0 md:mr-6">
             {% if block.settings.slider_image != blank %}
-            <img height="" width="" src="{{ block.settings.slider_image | image_url: width: 800 }}"
-              alt="Slider image" class="rounded-lg w-full max-w-[700px] max-h-[550px]" />
+            <img height="" width="" src="{{ block.settings.slider_image | image_url: width: 800 }}" alt="Slider image"
+              class="rounded-lg w-full max-w-[700px] max-h-[550px]" />
             {% else %}
             <div class="bg-gray-200 w-full h-[280px] flex items-center justify-center text-gray-500">Image here</div>
             {% endif %}
@@ -18,8 +18,7 @@
 
           <!-- Text Right -->
           <div class="relative px-8 md:w-[30%] w-full flex flex-col items-start">
-            <div class="flex items-center gap-3 mb-5"
-              style="
+            <div class="flex items-center gap-3 mb-5" style="
                 font-size: {{ block.settings.main_text_size }}px;
                 color: {{ block.settings.text_color }};
                 font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};
@@ -27,13 +26,14 @@
               <span>{{ block.settings.custom_text }}</span>
               <div class="absolute top-[80px] right-10 md:top-[-30px] md:right-[-10px]">
                 {% if block.settings.logo_img != blank %}
-                <img height="" width="" src="{{ block.settings.logo_img | image_url: width: 50 }}"
-                  alt="Logo" style="width: {{ block.settings.logo_size }}px; height:auto;" />
+                <img height="" width="" src="{{ block.settings.logo_img | image_url: width: 50 }}" alt="Logo"
+                  style="width: {{ block.settings.logo_size }}px; height:auto;" />
                 {% endif %}
               </div>
             </div>
 
-            <div class="italic mt-2 transition-all duration-300 border-b-2 border-transparent hover:border-black hover:text-orange-600"
+            <div
+              class="italic mt-2 transition-all duration-300 border-b-2 border-transparent hover:border-black hover:text-orange-600"
               style="font-size: {{ block.settings.love_text_size }}px; color: {{ block.settings.love_text_color }}; letter-spacing: 1px;">
               {{ block.settings.love_text }}
             </div>
@@ -43,26 +43,70 @@
       </div>
 
       <button id="slider-prev"
-        class="absolute left-3 top-1/2 -translate-y-1/2 bg-rose-100/40 backdrop-blur-sm rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow cursor-pointer">‹</button>
+        class="absolute left-3 top-1/2 -translate-y-1/2 bg-rose-100/40 backdrop-blur-sm rounded-full shadow cursor-pointer">
+
+
+        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+          <style type="text/css">
+            .st0 {
+              display: none;
+            }
+
+            .st1 {
+              display: inline;
+            }
+
+            .st2 {
+              opacity: 0.2;
+              fill: none;
+              stroke: #000000;
+              stroke-width: 5.000000e-02;
+              stroke-miterlimit: 10;
+            }
+          </style>
+
+          <g class="st0" id="grid_system" />
+
+          <g id="_icons">
+
+            <g>
+
+              <path
+                d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8    S16.4,20,12,20z" />
+
+              <path
+                d="M13.7,8.3c-0.4-0.4-1-0.4-1.4,0l-3,3c-0.4,0.4-0.4,1,0,1.4l3,3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3    c0.4-0.4,0.4-1,0-1.4L11.4,12l2.3-2.3C14.1,9.3,14.1,8.7,13.7,8.3z" />
+
+            </g>
+
+          </g>
+
+        </svg>
+      </button>
       <button id="slider-next"
-        class="absolute right-3 top-1/2 -translate-y-1/2 bg-rose-100/30 backdrop-blur-sm rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow cursor-pointer">›</button>
+        class="absolute right-3 top-1/2 -translate-y-1/2 bg-rose-100/30 backdrop-blur-sm rounded-full shadow cursor-pointer"><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="rotate(180)">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{display:none;} .st1{display:inline;} .st2{opacity:0.2;fill:none;stroke:#000000;stroke-width:5.000000e-02;stroke-miterlimit:10;} </style> <g class="st0" id="grid_system"/> <g id="_icons"> <g> <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8 S16.4,20,12,20z"/> <path d="M13.7,8.3c-0.4-0.4-1-0.4-1.4,0l-3,3c-0.4,0.4-0.4,1,0,1.4l3,3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L11.4,12l2.3-2.3C14.1,9.3,14.1,8.7,13.7,8.3z"/> </g> </g> </g>
+
+</svg></button>
     </div>
   </div>
 
 </section>
-  <div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
- {{ section.settings.ctm_end_text }}
+<div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
+  {{ section.settings.ctm_end_text }}
 </div>
 
-{% comment %} other type is  {% endcomment %}
-{% comment %} {% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'slide' %}
-      <div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
-        {{ block.settings.ctm_end_text }}
-      </div>
-  {% endcase %}
-{% endfor %} {% endcomment %}
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -91,73 +135,73 @@
 
 {% schema %}
 {
-  "name": "Custom Image/Text Slider",
-  "settings": [
-    {
-          "type": "font_picker",
-          "id": "main_font",
-          "label": "Main Text Font",
-          "default": "work_sans_n4"
-        },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background",
-      "default": "#ffffff"
-    }, {
-             "type": "text",
-              "id": "ctm_end_text",
-             "label": "End Text", 
-             "default": "fairtrade  |  Organic  |  Climate neutral"
-        }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Slide",
-      "settings": [
-        { "type": "image_picker", "id": "slider_image", "label": "Image (Left)" },
-        { "type": "text", "id": "custom_text", "label": "Main Text", "default": "ENJOY LIFE SIP BY SIP" },
-        { "type": "image_picker", "id": "logo_img", "label": "Logo (beside main text)" },
-        { "type": "color", "id": "text_color", "label": "Main Text Color", "default": "#222" },
-        {
-          "type": "range",
-          "id": "main_text_size",
-          "label": "Font Size",
-          "min": 12,
-          "max": 60,
-          "step": 2,
-          "default": 30
-        },
-       
-        {
-          "type": "range",
-          "id": "logo_size",
-          "label": "Logo Size (px)",
-          "min": 20,
-          "max": 80,
-          "default": 44
-        },
-        { "type": "text", "id": "love_text", "label": "With Love! Text", "default": "with love!" },
-        {
-          "type": "color",
-          "id": "love_text_color",
-          "label": "With Love! Text Color",
-          "default": "#555"
-        },
-        {
-          "type": "range",
-          "id": "love_text_size",
-          "label": "With Love! Text Size (px)",
-          "min": 10,
-          "max": 36,
-          "default": 18
-        } 
-       
-      ]
-    }
-  ],
-  "max_blocks": 6,
-  "presets": [{ "name": "Custom Slider" }]
+"name": "Custom Image/Text Slider",
+"settings": [
+{
+"type": "font_picker",
+"id": "main_font",
+"label": "Main Text Font",
+"default": "work_sans_n4"
+},
+{
+"type": "color",
+"id": "background",
+"label": "Background",
+"default": "#ffffff"
+}, {
+"type": "text",
+"id": "ctm_end_text",
+"label": "End Text",
+"default": "fairtrade  |  Organic  |  Climate neutral"
+}
+],
+"blocks": [
+{
+"type": "slide",
+"name": "Slide",
+"settings": [
+{ "type": "image_picker", "id": "slider_image", "label": "Image (Left)" },
+{ "type": "text", "id": "custom_text", "label": "Main Text", "default": "ENJOY LIFE SIP BY SIP" },
+{ "type": "image_picker", "id": "logo_img", "label": "Logo (beside main text)" },
+{ "type": "color", "id": "text_color", "label": "Main Text Color", "default": "#222" },
+{
+"type": "range",
+"id": "main_text_size",
+"label": "Font Size",
+"min": 12,
+"max": 60,
+"step": 2,
+"default": 30
+},
+
+{
+"type": "range",
+"id": "logo_size",
+"label": "Logo Size (px)",
+"min": 20,
+"max": 80,
+"default": 44
+},
+{ "type": "text", "id": "love_text", "label": "With Love! Text", "default": "with love!" },
+{
+"type": "color",
+"id": "love_text_color",
+"label": "With Love! Text Color",
+"default": "#555"
+},
+{
+"type": "range",
+"id": "love_text_size",
+"label": "With Love! Text Size (px)",
+"min": 10,
+"max": 36,
+"default": 18
+}
+
+]
+}
+],
+"max_blocks": 6,
+"presets": [{ "name": "Custom Slider" }]
 }
 {% endschema %}
