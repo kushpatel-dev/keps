@@ -115,7 +115,8 @@
       "settings": {
         "main_font": "azeret_mono_n4",
         "background": "#ffffff",
-        "ctm_end_text": "fairtrade  |  Organic  |  Climate neutral"
+        "ctm_end_text": "fairtrade  |  Organic  |  Climate neutral",
+        "scroll_time": 8
       }
     },
     "featured_collection": {

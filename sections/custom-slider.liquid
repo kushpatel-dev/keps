@@ -1,7 +1,7 @@
 <section>
   <div class="relative">
     <div class="custom-slider overflow-hidden" id="custom-slider">
-      <div class="flex transition-all duration-500" id="slider-track">
+      <div class="flex transition-all duration-500 ease-in-out" id="slider-track">
         {% for block in section.blocks %}
         <div class="w-full shrink-0 flex flex-col md:flex-row items-center justify-center py-10 md:py-16"
           style="background: {{ section.settings.background }};" {{ block.shopify_attributes }}>
@@ -18,11 +18,8 @@
 
           <!-- Text Right -->
           <div class="relative px-8 md:w-[30%] w-full flex flex-col items-start">
-            <div class="flex items-center gap-3 mb-5" style="
-                font-size: {{ block.settings.main_text_size }}px;
-                color: {{ block.settings.text_color }};
-                font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};
-              ">
+            <div class="flex items-center gap-3 mb-5"
+              style="font-size: {{ block.settings.main_text_size }}px; color: {{ block.settings.text_color }}; font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};">
               <span>{{ block.settings.custom_text }}</span>
               <div class="absolute top-[80px] right-10 md:top-[-30px] md:right-[-10px]">
                 {% if block.settings.logo_img != blank %}
@@ -42,7 +39,7 @@
         {% endfor %}
       </div>
 
-      <button id="slider-prev"
+       <button id="slider-prev"
         class="absolute left-3 top-1/2 -translate-y-1/2 bg-rose-100/40 backdrop-blur-sm rounded-full shadow cursor-pointer">
 
 
@@ -87,121 +84,182 @@
         </svg>
       </button>
       <button id="slider-next"
-        class="absolute right-3 top-1/2 -translate-y-1/2 bg-rose-100/30 backdrop-blur-sm rounded-full shadow cursor-pointer"><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        class="absolute right-3 top-1/2 -translate-y-1/2 bg-rose-100/30 backdrop-blur-sm rounded-full shadow cursor-pointer">
+         <svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"
+          transform="rotate(180)">
 
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" transform="rotate(180)">
+          <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
 
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+          <g id="SVGRepo_iconCarrier">
+            <style type="text/css">
+              .st0 {
+                display: none;
+              }
 
-<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{display:none;} .st1{display:inline;} .st2{opacity:0.2;fill:none;stroke:#000000;stroke-width:5.000000e-02;stroke-miterlimit:10;} </style> <g class="st0" id="grid_system"/> <g id="_icons"> <g> <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8 S16.4,20,12,20z"/> <path d="M13.7,8.3c-0.4-0.4-1-0.4-1.4,0l-3,3c-0.4,0.4-0.4,1,0,1.4l3,3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L11.4,12l2.3-2.3C14.1,9.3,14.1,8.7,13.7,8.3z"/> </g> </g> </g>
+              .st1 {
+                display: inline;
+              }
 
-</svg></button>
+              .st2 {
+                opacity: 0.2;
+                fill: none;
+                stroke: #000000;
+                stroke-width: 5.000000e-02;
+                stroke-miterlimit: 10;
+              }
+            </style>
+            <g class="st0" id="grid_system" />
+            <g id="_icons">
+              <g>
+                <path
+                  d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8 S16.4,20,12,20z" />
+                <path
+                  d="M13.7,8.3c-0.4-0.4-1-0.4-1.4,0l-3,3c-0.4,0.4-0.4,1,0,1.4l3,3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L11.4,12l2.3-2.3C14.1,9.3,14.1,8.7,13.7,8.3z" />
+              </g>
+            </g>
+          </g>
+
+        </svg>
+      </button>
     </div>
   </div>
 
+  <!-- End Text -->
+  <div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
+    {{ section.settings.ctm_end_text }}
+  </div>
 </section>
-<div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
-  {{ section.settings.ctm_end_text }}
-</div>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.getElementById('slider-track');
     const slides = Array.from(track.children);
+    const intervalTime = {{ section.settings.scroll_time | default: 5 }} * 1000; // convert to ms
     let current = 0;
+    let autoPlay;
 
     function showSlide(idx) {
       const slideWidth = slides[0].offsetWidth;
       track.style.transform = `translateX(-${idx * slideWidth}px)`;
     }
 
-    document.getElementById('slider-prev').onclick = () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    };
-    document.getElementById('slider-next').onclick = () => {
+    function nextSlide() {
       current = (current + 1) % slides.length;
       showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    // Auto play
+    function startAutoPlay() {
+      autoPlay = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlay);
+    }
+
+    // Controls
+    document.getElementById('slider-prev').onclick = () => {
+      prevSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    };
+    document.getElementById('slider-next').onclick = () => {
+      nextSlide();
+      stopAutoPlay();
+      startAutoPlay();
     };
 
     window.addEventListener('resize', () => showSlide(current));
     showSlide(current);
+    startAutoPlay();
   });
 </script>
 
 {% schema %}
 {
-"name": "Custom Image/Text Slider",
-"settings": [
-{
-"type": "font_picker",
-"id": "main_font",
-"label": "Main Text Font",
-"default": "work_sans_n4"
-},
-{
-"type": "color",
-"id": "background",
-"label": "Background",
-"default": "#ffffff"
-}, {
-"type": "text",
-"id": "ctm_end_text",
-"label": "End Text",
-"default": "fairtrade  |  Organic  |  Climate neutral"
-}
-],
-"blocks": [
-{
-"type": "slide",
-"name": "Slide",
-"settings": [
-{ "type": "image_picker", "id": "slider_image", "label": "Image (Left)" },
-{ "type": "text", "id": "custom_text", "label": "Main Text", "default": "ENJOY LIFE SIP BY SIP" },
-{ "type": "image_picker", "id": "logo_img", "label": "Logo (beside main text)" },
-{ "type": "color", "id": "text_color", "label": "Main Text Color", "default": "#222" },
-{
-"type": "range",
-"id": "main_text_size",
-"label": "Font Size",
-"min": 12,
-"max": 60,
-"step": 2,
-"default": 30
-},
-
-{
-"type": "range",
-"id": "logo_size",
-"label": "Logo Size (px)",
-"min": 20,
-"max": 80,
-"default": 44
-},
-{ "type": "text", "id": "love_text", "label": "With Love! Text", "default": "with love!" },
-{
-"type": "color",
-"id": "love_text_color",
-"label": "With Love! Text Color",
-"default": "#555"
-},
-{
-"type": "range",
-"id": "love_text_size",
-"label": "With Love! Text Size (px)",
-"min": 10,
-"max": 36,
-"default": 18
-}
-
-]
-}
-],
-"max_blocks": 6,
-"presets": [{ "name": "Custom Slider" }]
+  "name": "Custom Image/Text Slider",
+  "settings": [
+    {
+      "type": "font_picker",
+      "id": "main_font",
+      "label": "Main Text Font",
+      "default": "work_sans_n4"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "ctm_end_text",
+      "label": "End Text",
+      "default": "fairtrade | Organic | Climate neutral"
+    },
+    {
+      "type": "range",
+      "id": "scroll_time",
+      "label": "Autoplay Time (seconds)",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "slider_image", "label": "Image (Left)" },
+        { "type": "text", "id": "custom_text", "label": "Main Text", "default": "ENJOY LIFE SIP BY SIP" },
+        { "type": "image_picker", "id": "logo_img", "label": "Logo (beside main text)" },
+        { "type": "color", "id": "text_color", "label": "Main Text Color", "default": "#222" },
+        {
+          "type": "range",
+          "id": "main_text_size",
+          "label": "Font Size",
+          "min": 12,
+          "max": 60,
+          "step": 2,
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "logo_size",
+          "label": "Logo Size (px)",
+          "min": 20,
+          "max": 80,
+          "default": 44
+        },
+        { "type": "text", "id": "love_text", "label": "With Love! Text", "default": "with love!" },
+        {
+          "type": "color",
+          "id": "love_text_color",
+          "label": "With Love! Text Color",
+          "default": "#555"
+        },
+        {
+          "type": "range",
+          "id": "love_text_size",
+          "label": "With Love! Text Size (px)",
+          "min": 10,
+          "max": 36,
+          "default": 18
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Custom Slider" }]
 }
 {% endschema %}
