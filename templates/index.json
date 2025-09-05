@@ -348,7 +348,7 @@
       "name": "Video carousel (Tailwind)",
       "settings": {
         "heading": "Customer Favorites",
-        "heading_size": 100,
+        "heading_size": 130,
         "heading_letter_spacing": 0,
         "description": "<p>this  is a best coffee in this  shop</p>",
         "description_size": 100,
