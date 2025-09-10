@@ -38,7 +38,7 @@
 
       {%- when 'title' -%}
         <header class="page-width page-width--narrow ctm-blog{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}" {{ block.shopify_attributes }}>
-          <h1 class="article-template__title">
+          <h1 class="article-template__title text-3xl">
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}

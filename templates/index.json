@@ -348,12 +348,12 @@
       "name": "Video carousel (Tailwind)",
       "settings": {
         "heading": "Customer Favorites",
-        "heading_size": 130,
+        "heading_size": 150,
         "heading_letter_spacing": 0,
         "description": "<p>this  is a best coffee in this  shop</p>",
-        "description_size": 100,
-        "heading_description_spacing": 20,
-        "gap": 10,
+        "description_size": 130,
+        "heading_description_spacing": 30,
+        "gap": 15,
         "show_arrows": true,
         "text_color": "#121212",
         "button_text_color": "#ffffff",
@@ -474,6 +474,50 @@
         "custom_font": "kaushan_script_n4",
         "layout_direction": "rtl"
       }
+    },
+    "ctm_card_Wdn9t8": {
+      "type": "ctm-card",
+      "blocks": {
+        "ctm_card_DnUaAU": {
+          "type": "ctm_card",
+          "settings": {
+            "card_image": "shopify://shop_images/bglight-roast-coffee.jpg",
+            "card_title": "Golden Hour Latte",
+            "card_description": "A smooth blend that captures the warmth of sunrise in every creamy sip.",
+            "card_link": "#",
+            "link_text": "Learn More"
+          }
+        },
+        "ctm_card_XVwnVk": {
+          "type": "ctm_card",
+          "settings": {
+            "card_image": "shopify://shop_images/coffee-1576552.jpg",
+            "card_title": "Midnight Roast",
+            "card_description": "Dark, bold, and unapologetically strong — for the nights that never end.",
+            "card_link": "#",
+            "link_text": "Learn More"
+          }
+        },
+        "ctm_card_9gt4tC": {
+          "type": "ctm_card",
+          "settings": {
+            "card_image": "shopify://shop_images/coffee-4618705.jpg",
+            "card_title": "Harvest Origins",
+            "card_description": "Single-origin beans, ethically sourced and roasted to celebrate the farmer’s craft.",
+            "card_link": "#",
+            "link_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "ctm_card_DnUaAU",
+        "ctm_card_XVwnVk",
+        "ctm_card_9gt4tC"
+      ],
+      "name": "CTM Card",
+      "settings": {
+        "section_heading": "celebrate the farmer’s craft."
+      }
     }
   },
   "order": [
@@ -488,6 +532,7 @@
     "pop_video_X44Cix",
     "ctm_hero_section_McUtBJ",
     "ctm_video_BaRJzA",
-    "ctm_review_section_HfTWYd"
+    "ctm_review_section_HfTWYd",
+    "ctm_card_Wdn9t8"
   ]
 }

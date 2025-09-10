@@ -29,7 +29,6 @@
         "blog": "news",
         "post_limit": 3,
         "heading": "The Roaster’s Journal",
-        "heading_size": "h1",
         "columns_desktop": 3,
         "show_view_all": true,
         "show_image": true,

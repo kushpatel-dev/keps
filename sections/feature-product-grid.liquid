@@ -401,30 +401,8 @@
 </style>
 
 <div class="page-width">
-  <h2 class="fp-section-title">{{ section.settings.fp-title }}</h2>
+  <h2 class="fp-section-title text-4xl pb-5">{{ section.settings.fp-title }}</h2>
 
-  {% if section.settings.fp-source-type == 'collection' and section.settings.fp-collection != blank %}
-    <div class="fp-customization-controls">
-      {% for product_type in collections[section.settings.fp-collection].all_products_grouped_by_type %}
-        <button class="fp-customization-button fp-product-filter" data-type="{{ product_type | handle }}">
-          {{ product_type }}
-        </button>
-      {% endfor %}
-
-      {% if section.settings.fp-show-all-products-inline %}
-        {% assign total_products = collections[section.settings.fp-collection].products.size %}
-        {% if total_products > section.settings.fp-products-to-show %}
-          <button class="fp-all-products-button fp-load-more-btn" id="fp-load-more-products">
-            Show All Products ({{ total_products }})
-          </button>
-        {% endif %}
-      {% else %}
-        <a href="{{ section.settings.all-product }}" class="fp-all-products-button">
-          All Products
-        </a>
-      {% endif %}
-    </div>
-  {% endif %}
 
   <div class="fp-product-grid">
     {% assign products_to_display = '' %}
@@ -532,6 +510,30 @@
       </div>
     {%- endfor -%}
   </div>
+  {%- comment -%} Product Filtering and Load More Controls {%- endcomment -%}
+  {% if section.settings.fp-source-type == 'collection' and section.settings.fp-collection != blank %}
+    <div class="fp-customization-controls flex justify-center pt-[30px]">
+      {% for product_type in collections[section.settings.fp-collection].all_products_grouped_by_type %}
+        <button class="fp-customization-button fp-product-filter" data-type="{{ product_type | handle }}">
+          {{ product_type }}
+        </button>
+      {% endfor %}
+
+      {% if section.settings.fp-show-all-products-inline %}
+        {% assign total_products = collections[section.settings.fp-collection].products.size %}
+        {% if total_products > section.settings.fp-products-to-show %}
+          <button class="fp-all-products-button fp-load-more-btn" id="fp-load-more-products">
+            Show All Products ({{ total_products }})
+          </button>
+        {% endif %}
+      {% else %}
+        <a href="{{ section.settings.all-product }}" class="fp-all-products-button">
+          All Products
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {

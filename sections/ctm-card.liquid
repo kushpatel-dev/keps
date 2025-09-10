@@ -1,0 +1,90 @@
+<div class="flex flex-col justify-center items-center p-6 bg-white overflow-x-hidden">
+  <h2 class="text-5xl text-gray-900 pt-5 pb-12">{{ section.settings.section_heading }}</h2>
+  <div class="gap-6 flex flex-col md:flex-row justify-center items-center">
+
+    {% for block in section.blocks %}
+      <div class="relative min-w-[310px] sm:min-w-[250px] md:max-w-[230px] lg:max-w-[380px] xl:max-w-[450px] ctm-card bg-gray-50 rounded-xl shadow-md p-4 flex flex-col justify-center items-center text-center">
+
+        {% if block.settings.card_image %}
+          <img
+            height=""
+            width=""
+            src="{{ block.settings.card_image | img_url: 'medium' }}"
+            alt="{{ block.settings.card_title }}"
+            class="w-full h-[360px] object-cover rounded-lg mb-4">
+        {% endif %}
+
+        <h2 class="absolute top-[30px] left-[20px] ctm-card-title px-2.5 !text-[24px] md:!text-[18px] lg:!text-[20px] text-[#ffffff] bg-orange-950 opacity-95 font-bold">
+          {{ block.settings.card_title }}
+        </h2>
+
+        <p class="ctm-card__description text-gray-600 mb-4 text-3xl">
+          {{ block.settings.card_description }}
+        </p>
+
+        {% if block.settings.card_link %}
+          <a href="{{ block.settings.card_link }}" class="ctm-card__link text-amber-950 font-medium hover:underline hover:text-blue-800">
+            {{ block.settings.link_text }}
+          </a>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "CTM Card",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Section Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "ctm_card",
+        "name": "ctm_card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+          },
+          {
+            "type": "text",
+            "id": "card_title",
+            "label": "Card Title",
+            "default": "Card Title"
+          },
+          {
+            "type": "textarea",
+            "id": "card_description",
+            "label": "Card Description",
+            "default": "This is a description of the card."
+          },
+          {
+            "type": "url",
+            "id": "card_link",
+            "label": "Card Link URL"
+          }, {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text",
+            "default": "Learn More"
+          }
+        ],
+        "limit": 6
+      }
+    ],
+    "presets": [
+      {
+        "name": "CTM Card",
+        "category": "Cards"
+      }
+    ]
+  }
+
+{% endschema %}
