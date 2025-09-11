@@ -1,26 +1,33 @@
 <div class="w-full bg-white py-12">
   <div class="max-w-8xl mx-auto">
-   <div class="flex flex-col-reverse 
-  md:flex-row 
-  {% if section.settings.layout_direction == 'rtl' %}
-    md:flex-row-reverse md:divide-x-reverse
-  {% else %}
-    md:flex-row md:divide-x
-  {% endif %}
-  divide-gray-200">
-
+    <div
+      class="
+        flex flex-col-reverse
+        md:flex-row
+        {% if section.settings.layout_direction == 'rtl' %}
+          md:flex-row-reverse md:divide-x-reverse
+        {% else %}
+          md:flex-row md:divide-x
+        {% endif %}
+        divide-gray-200
+      "
+    >
       <!-- Left: Review -->
-     <div class="w-full md:w-1/2 flex items-center justify-center
-  {% if section.settings.layout_direction == 'rtl' %}
-    md:pl-10
-  {% else %}
-    md:pr-10
-  {% endif %}
-  px-6 min-h-[250px] relative overflow-hidden">
+      <div
+        class="
+          w-full md:w-1/2 flex items-center justify-center
+          {% if section.settings.layout_direction == 'rtl' %}
+            md:pl-10
+          {% else %}
+            md:pr-10
+          {% endif %}
+          px-6 min-h-[250px] relative overflow-hidden
+        "
+      >
         {% if section.settings.custom_font != blank %}
           <style>
             #CustomFontWrapper-{{ section.id }} {
-              font-family: {{ section.settings.custom_font.family }}, 
+              font-family: {{ section.settings.custom_font.family }},
               {{ section.settings.custom_font.fallback_families }};
               font-weight: {{ section.settings.custom_font.weight }};
               font-style: {{ section.settings.custom_font.style }};
@@ -35,10 +42,14 @@
           <div
             id="review-carousel"
             class="w-full relative"
-            style="font-family: {{ selected_font | default: 'inherit' }};">
+            style="font-family: {{ selected_font | default: 'inherit' }};"
+          >
             <!-- Slides -->
             {% for block in section.blocks %}
-              <div class="review-slide transition-all duration-300 ease-in-out {% unless forloop.first %}hidden{% endunless %}" data-index="{{ forloop.index0 }}">
+              <div
+                class="review-slide transition-all duration-300 ease-in-out {% unless forloop.first %}hidden{% endunless %}"
+                data-index="{{ forloop.index0 }}"
+              >
                 <!-- Stars -->
                 <div class="flex justify-center mb-5">
                   {% assign stars = block.settings.stars | plus: 0 %}
@@ -47,7 +58,10 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="#FFD700"
                       viewBox="0 0 20 20"
-                      class="w-6 h-6"><polygon points="10,1 12.6,7.6 19.5,7.6 13.9,11.9 16.5,18.5 10,14.1 3.5,18.5 6.1,11.9 0.5,7.6 7.4,7.6" /></svg>
+                      class="w-6 h-6"
+                    >
+                      <polygon points="10,1 12.6,7.6 19.5,7.6 13.9,11.9 16.5,18.5 10,14.1 3.5,18.5 6.1,11.9 0.5,7.6 7.4,7.6" />
+                    </svg>
                   {% endfor %}
                   {% assign empty_stars = 5 | minus: stars %}
                   {% for i in (1..empty_stars) %}
@@ -55,39 +69,56 @@
                       xmlns="http://www.w3.org/2000/svg"
                       fill="#E5E7EB"
                       viewBox="0 0 20 20"
-                      class="w-6 h-6"><polygon points="10,1 12.6,7.6 19.5,7.6 13.9,11.9 16.5,18.5 10,14.1 3.5,18.5 6.1,11.9 0.5,7.6 7.4,7.6" /></svg>
+                      class="w-6 h-6"
+                    >
+                      <polygon points="10,1 12.6,7.6 19.5,7.6 13.9,11.9 16.5,18.5 10,14.1 3.5,18.5 6.1,11.9 0.5,7.6 7.4,7.6" />
+                    </svg>
                   {% endfor %}
                 </div>
                 <!-- Review Text -->
-                <h2 class="ctm-review-text ">
-                  "{{ block.settings.review }}"
-                </h2>
+                <div class="max-w-[180px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[390px] mx-auto">
+                  <h2 class="ctm-review-text ">"{{ block.settings.review }}"</h2>
+                </div>
                 <!-- Person Name -->
-                <p class="text-lg text-center text-orange-950 mt-6 tracking-wider font-mono">{{ block.settings.author }}</p>
+                <p class="text-lg text-center text-orange-950 mt-6 tracking-wider font-mono">
+                  {{ block.settings.author }}
+                </p>
               </div>
             {% endfor %}
 
             <!-- Carousel Controls -->
-            <div class="absolute left-0 top-1/2 transform -translate-y-1/2">
-              <button class="carousel-arrow-prev w-10 h-10 bg-white/70 hover:bg-black/10 rounded-full flex items-center justify-center shadow transition-colors" aria-label="Previous slide">
+            <div class="absolute left-[-5px] top-1/2 transform -translate-y-1/2">
+              <button
+                class="carousel-arrow-prev w-10 h-10 bg-white/70 hover:bg-black/10 rounded-full flex items-center justify-center shadow transition-colors"
+                aria-label="Previous slide"
+              >
                 <svg
                   width="22"
                   height="22"
                   fill="none"
                   stroke="black"
                   stroke-width="2"
-                  viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
               </button>
             </div>
-            <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
-              <button class="carousel-arrow-next w-10 h-10 bg-white/70 hover:bg-black/10 rounded-full flex items-center justify-center shadow transition-colors" aria-label="Next slide">
+            <div class="absolute right-[-5px] top-1/2 transform -translate-y-1/2">
+              <button
+                class="carousel-arrow-next w-10 h-10 bg-white/70 hover:bg-black/10 rounded-full flex items-center justify-center shadow transition-colors"
+                aria-label="Next slide"
+              >
                 <svg
                   width="22"
                   height="22"
                   fill="none"
                   stroke="black"
                   stroke-width="2"
-                  viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg>
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
               </button>
             </div>
 
@@ -98,7 +129,8 @@
                   class="carousel-dot focus:outline-none w-4 h-4 md:w-3 md:h-3 rounded-full border border-gray-400 {% if forloop.first %}bg-gray-800{% else %}bg-gray-300{% endif %} transition-all"
                   style="min-width: 16px; min-height: 16px;"
                   aria-label="Show slide {{ forloop.index0 }}"
-                  onclick="showReviewSlide({{ forloop.index0 }})"></button>
+                  onclick="showReviewSlide({{ forloop.index0 }})"
+                ></button>
               {% endfor %}
             </div>
           </div>
@@ -108,23 +140,31 @@
       </div>
 
       <!-- Right: Image -->
-      <div class="w-full md:w-1/2 flex items-center justify-center
-  {% if section.settings.layout_direction == 'rtl' %}
-    md:pr-10
-  {% else %}
-    md:pl-10
-  {% endif %}
-  px-6 max-h-[250px] md:min-h-[350px] overflow-hidden">
+      <div
+        class="
+          w-full md:w-1/2 flex items-center justify-center
+          {% if section.settings.layout_direction == 'rtl' %}
+            md:pr-10
+          {% else %}
+            md:pl-10
+          {% endif %}
+          px-6 max-h-[250px] md:min-h-[350px] overflow-hidden
+        "
+      >
         {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
-            <div class="image-slide transition-all duration-300 ease-in-out {% unless forloop.first %}hidden{% endunless %}" data-index="{{ forloop.index0 }}">
+            <div
+              class="image-slide transition-all duration-300 ease-in-out {% unless forloop.first %}hidden{% endunless %}"
+              data-index="{{ forloop.index0 }}"
+            >
               {% if block.settings.image != blank %}
-                <img
-                  height=""
-                  width=""
-                  src="{{ block.settings.image | image_url: width: 600 }}"
-                  alt="Review Image"
-                  class="sm:max-w-[350px] sm:max-h-[150px] md:max-w-[550px] md:max-h-[350px] lg:max-w-[650px] lg:max-h-[450px] rounded-lg shadow-lg mx-auto" />
+                <img height="" width=""
+  src="{{ block.settings.image | image_url: width: 600 }}"
+  alt="Review Image"
+  class="tilt-card sm:max-w-[350px] sm:max-h-[150px] md:max-w-[550px] md:max-h-[350px] lg:max-w-[650px] lg:max-h-[450px] rounded-lg mx-auto"
+/>
+
+
               {% else %}
                 <div class="w-full h-[250px] flex items-center justify-center bg-gray-200 rounded">
                   <span class="text-gray-400">No image selected</span>
@@ -139,114 +179,122 @@
 </div>
 
 <script>
-  (function(){
-  var currentIdx = 0;
-  var reviewSlides = document.querySelectorAll('.review-slide');
-  var imageSlides = document.querySelectorAll('.image-slide');
-  var dots = document.querySelectorAll('.carousel-dot');
-  var prevBtn = document.querySelector('.carousel-arrow-prev');
-  var nextBtn = document.querySelector('.carousel-arrow-next');
-  var maxIdx = reviewSlides.length - 1;
-  
-  function showIdx(idx) {
-    currentIdx = ((idx % (maxIdx+1)) + (maxIdx+1)) % (maxIdx+1); // wrap around
-    reviewSlides.forEach(function(el, i) {
-      el.classList.toggle('hidden', i !== currentIdx);
-    });
-    imageSlides.forEach(function(el, i) {
-      el.classList.toggle('hidden', i !== currentIdx);
-    });
-    dots.forEach(function(dot, i) {
-      dot.classList.toggle('bg-gray-800', i === currentIdx);
-      dot.classList.toggle('bg-gray-300', i !== currentIdx);
-    });
-  }
-  window.showReviewSlide = showIdx;
-  
-  if(prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', function(){ showIdx(currentIdx-1); });
-    nextBtn.addEventListener('click', function(){ showIdx(currentIdx+1); });
-  }
-  
-  // Swipe support for mobile users
-  function addSwipeListener(container) {
-    var ts;
-    container.addEventListener('touchstart', function(e){ ts = e.touches[0].clientX; });        
-    container.addEventListener('touchend', function(e){
-      var te = e.changedTouches[0].clientX;
-      if(!ts || Math.abs(te-ts) < 30) return;
-      if(te < ts) showIdx(currentIdx+1);  // Left swipe
-      else showIdx(currentIdx-1);         // Right swipe
-    });
-  }
-  var carousel = document.getElementById('review-carousel');
-  if(carousel) addSwipeListener(carousel);
-  
+  (function () {
+    var currentIdx = 0;
+    var reviewSlides = document.querySelectorAll('.review-slide');
+    var imageSlides = document.querySelectorAll('.image-slide');
+    var dots = document.querySelectorAll('.carousel-dot');
+    var prevBtn = document.querySelector('.carousel-arrow-prev');
+    var nextBtn = document.querySelector('.carousel-arrow-next');
+    var maxIdx = reviewSlides.length - 1;
+
+    function showIdx(idx) {
+      currentIdx = ((idx % (maxIdx + 1)) + (maxIdx + 1)) % (maxIdx + 1); // wrap around
+      reviewSlides.forEach(function (el, i) {
+        el.classList.toggle('hidden', i !== currentIdx);
+      });
+      imageSlides.forEach(function (el, i) {
+        el.classList.toggle('hidden', i !== currentIdx);
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('bg-gray-800', i === currentIdx);
+        dot.classList.toggle('bg-gray-300', i !== currentIdx);
+      });
+    }
+    window.showReviewSlide = showIdx;
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', function () {
+        showIdx(currentIdx - 1);
+      });
+      nextBtn.addEventListener('click', function () {
+        showIdx(currentIdx + 1);
+      });
+    }
+
+    // Swipe support for mobile users
+    function addSwipeListener(container) {
+      var ts;
+      container.addEventListener('touchstart', function (e) {
+        ts = e.touches[0].clientX;
+      });
+      container.addEventListener('touchend', function (e) {
+        var te = e.changedTouches[0].clientX;
+        if (!ts || Math.abs(te - ts) < 30) return;
+        if (te < ts) showIdx(currentIdx + 1); // Left swipe
+        else showIdx(currentIdx - 1); // Right swipe
+      });
+    }
+    var carousel = document.getElementById('review-carousel');
+    if (carousel) addSwipeListener(carousel);
   })();
 </script>
 
 {% schema %}
-  {
-    "name": "Review Carousel",
-    "settings": [
-      {
-        "type": "font_picker",
-        "id": "custom_font",
-        "label": "Custom Font",
-        "default": "work_sans_n4"
-      },{
-  "type": "select",
-  "id": "layout_direction",
-  "label": "Layout Direction",
-  "default": "ltr",
-  "options": [
+{
+  "name": "Review Carousel",
+  "settings": [
     {
-      "value": "ltr",
-      "label": "Text Left / Image Right"
+      "type": "font_picker",
+      "id": "custom_font",
+      "label": "Custom Font",
+      "default": "work_sans_n4"
     },
     {
-      "value": "rtl",
-      "label": "Image Left / Text Right"
+      "type": "select",
+      "id": "layout_direction",
+      "label": "Layout Direction",
+      "default": "ltr",
+      "options": [
+        {
+          "value": "ltr",
+          "label": "Text Left / Image Right"
+        },
+        {
+          "value": "rtl",
+          "label": "Image Left / Text Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Block",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "review",
+          "label": "Review Text",
+          "default": "This is an amazing product! Highly recommend."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Jane Doe"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Review Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Review Carousel With Image"
     }
   ]
 }
-
-    ],
-    "blocks": [
-      {
-        "type": "review",
-        "name": "Review Block",
-        "settings": [
-          {
-            "type": "range",
-            "id": "stars",
-            "label": "Stars",
-            "min": 1,
-            "max": 5,
-            "default": 5
-          }, {
-            "type": "text",
-            "id": "review",
-            "label": "Review Text",
-            "default": "This is an amazing product! Highly recommend."
-          }, {
-            "type": "text",
-            "id": "author",
-            "label": "Author Name",
-            "default": "Jane Doe"
-          }, {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Review Image"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 10,
-    "presets": [
-      {
-        "name": "Review Carousel With Image"
-      }
-    ]
-  }
 {% endschema %}

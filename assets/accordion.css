@@ -7,7 +7,7 @@
   --color-text-primary: #2a2a2a;
   --color-text-shadow: #ccc;
 
-  --color-accordion-header-bg: #f7d794;
+  --color-accordion-header-bg: #fdf2d8;
   --color-accordion-header-bg-hover: #f6b93b;
   --color-accordion-header-bg-active: #f19066;
   --color-accordion-header-text: #814329;
@@ -31,7 +31,6 @@
 
 body {
 
-  padding: 20px;
   background: var(--color-bg-body);
 }
 

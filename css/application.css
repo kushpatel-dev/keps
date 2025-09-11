@@ -168,3 +168,22 @@ font-family:"subway-novella";
 .ctm-card-title{
   @apply text-lg font-semibold px-3 py-1 rounded;
 }
+
+.shopify-policy__container{
+  @apply max-w-[100%] px-10;
+}
+.tilt-card {
+  transform: perspective(800px) rotateY(-8deg);
+  transition: transform 1s ease;
+  border-radius: 4px;
+  box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+}
+
+.tilt-card:hover {
+  transform: perspective(800px) rotateY(-4deg);
+}
+

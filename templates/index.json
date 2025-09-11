@@ -201,7 +201,7 @@
       ],
       "name": "Brand Marquee",
       "settings": {
-        "heading": "Our trusted Supplies",
+        "heading": "Our Trusted Supplies",
         "speed": 10
       }
     },
@@ -436,15 +436,6 @@
     "ctm_review_section_HfTWYd": {
       "type": "ctm-review-section",
       "blocks": {
-        "review_Yjx6Vp": {
-          "type": "review",
-          "settings": {
-            "stars": 5,
-            "review": "Their cappuccino is always smooth, rich, and perfectly balanced.",
-            "author": "Ella Ferns",
-            "image": "shopify://shop_images/pexels-kaboompics-6347.jpg"
-          }
-        },
         "review_VATXpa": {
           "type": "review",
           "settings": {
@@ -452,6 +443,15 @@
             "review": "The aroma hits you the moment you walk in.",
             "author": "Mark Joseph",
             "image": "shopify://shop_images/pexels-ifreestock-585753.jpg"
+          }
+        },
+        "review_Yjx6Vp": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "review": "Their cappuccino is always smooth, rich, and perfectly balanced.",
+            "author": "Ella Ferns",
+            "image": "shopify://shop_images/pexels-kaboompics-6347.jpg"
           }
         },
         "review_TWqhxp": {
@@ -465,8 +465,8 @@
         }
       },
       "block_order": [
-        "review_Yjx6Vp",
         "review_VATXpa",
+        "review_Yjx6Vp",
         "review_TWqhxp"
       ],
       "name": "Review Carousel With Image",

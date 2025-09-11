@@ -164,6 +164,18 @@
         "padding_bottom": 36
       }
     },
+    "ctm_product_info_GMxWWg": {
+      "type": "ctm-product-info",
+      "name": "Product Info",
+      "settings": {
+        "product_info_heading": "<p>Tradition Meets Modern Innovation</p>",
+        "product_info_text": "We honor timeless craftsmanship while embracing today’s technology. The result is products that feel familiar yet inspire the future.",
+        "learn_more_url": "shopify://policies/privacy-policy",
+        "product_left_img": "shopify://shop_images/coffee-bean-6_1.png",
+        "padding_top-bottom": 40,
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
+      }
+    },
     "ctm_product_faq_xAb9gL": {
       "type": "ctm-product-faq",
       "blocks": {
@@ -207,12 +219,20 @@
         "heading": "FAQ",
         "description": "the populer question for user know if they use our product."
       }
+    },
+    "1757590167a2b1bed5": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "related-products",
     "collapsible_content_UJLTgF",
-    "ctm_product_faq_xAb9gL"
+    "ctm_product_info_GMxWWg",
+    "ctm_product_faq_xAb9gL",
+    "1757590167a2b1bed5"
   ]
 }
