@@ -16,6 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Welcome to Early Birds. We ship every Tuesday and Thursday. Free shipping above €25 in The Netherlands.",
             "link": ""

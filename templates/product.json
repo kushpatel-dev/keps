@@ -84,6 +84,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -99,10 +100,119 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "collapsible_content_UJLTgF": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_DtJDr9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "box",
+            "row_content": "<p>{{ block.settings.page.title }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Dw9ayi": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_haTHX9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_yTGk4V": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_DtJDr9",
+        "collapsible_row_Dw9ayi",
+        "collapsible_row_haTHX9",
+        "collapsible_row_yTGk4V"
+      ],
+      "disabled": true,
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "the main review",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ctm_product_faq_xAb9gL": {
+      "type": "ctm-product-faq",
+      "blocks": {
+        "faq_XjxMG3": {
+          "type": "faq",
+          "settings": {
+            "question": "<p><strong>What makes your coffee different from others?</strong></p>",
+            "answer": "Our beans are ethically sourced, freshly roasted in small batches, and crafted to deliver bold flavor with a smooth finish."
+          }
+        },
+        "faq_NaynUm": {
+          "type": "faq",
+          "settings": {
+            "question": "<p><strong>Is your coffee suitable for espresso, drip, or cold brew?</strong></p>",
+            "answer": "Yes—our blends are versatile and work beautifully across espresso machines, pour-over, French press, and cold brew."
+          }
+        },
+        "faq_XxmBbn": {
+          "type": "faq",
+          "settings": {
+            "question": "<p><strong>Do you offer ground coffee or only whole beans?</strong></p>",
+            "answer": "We offer both. You can choose whole beans for maximum freshness or pre-ground for convenience."
+          }
+        },
+        "faq_XF3cEj": {
+          "type": "faq",
+          "settings": {
+            "question": "<p><strong>How should I store my coffee for the best flavor?</strong></p>",
+            "answer": "Keep it in an airtight container in a cool, dark place. Avoid refrigeration, as it can affect taste and aroma."
+          }
+        }
+      },
+      "block_order": [
+        "faq_XjxMG3",
+        "faq_NaynUm",
+        "faq_XxmBbn",
+        "faq_XF3cEj"
+      ],
+      "name": "Product FAQ Accordion",
+      "settings": {
+        "heading": "FAQ",
+        "description": "the populer question for user know if they use our product."
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "collapsible_content_UJLTgF",
+    "ctm_product_faq_xAb9gL"
   ]
 }
