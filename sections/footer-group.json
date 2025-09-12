@@ -15,9 +15,9 @@
       "type": "ctm-footer",
       "name": "Extended Footer",
       "settings": {
-        "bg_color": "#e9dac7",
+        "bg_color": "#fdf2d8",
         "text_color": "#000000",
-        "font_family": "sans-serif",
+        "font_family": "system_ui_n4",
         "newsletter_subtitle": "Subscribe to our",
         "newsletter_title": "EARLY BIRDS COFFEE",
         "heading_size": 24,
