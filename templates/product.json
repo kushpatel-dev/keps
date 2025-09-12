@@ -108,8 +108,8 @@
           "type": "feature",
           "settings": {
             "title": "Ingredient Used:",
-            "desc": "Smooth and energizing{{ product.metafields.custom.ingredient_name.value }}",
-            "title2": "Benefit-title:",
+            "desc": "{{ product.metafields.custom.ingredient_name.value }}",
+            "title2": "Benefit's:",
             "desc2": ""
           }
         }
@@ -185,6 +185,18 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "ctm_video_gBbzjm": {
+      "type": "ctm-video",
+      "name": "Video & Text Split Improved",
+      "settings": {
+        "heading": "How We Make This?",
+        "description": "We host courses covering everything from simple home brewing techniques to advanced latte art to allow you to learn the essential life skill of how to make truly great coffee.",
+        "button_text": "",
+        "button_link": "",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/3c9562785e1b4c7fa0cb0324f4adff7e.mp4",
+        "video_poster": "shopify://shop_images/coffee-4334647_640.jpg"
+      }
     }
   },
   "order": [
@@ -193,6 +205,7 @@
     "ingredient_drPEDM",
     "ctm_product_info_GMxWWg",
     "ctm_product_faq_xAb9gL",
-    "1757590167a2b1bed5"
+    "1757590167a2b1bed5",
+    "ctm_video_gBbzjm"
   ]
 }
