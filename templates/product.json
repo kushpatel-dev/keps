@@ -42,7 +42,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -69,7 +69,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail",
@@ -191,10 +191,10 @@
       "name": "Video & Text Split Improved",
       "settings": {
         "heading": "How We Make This?",
-        "description": "We host courses covering everything from simple home brewing techniques to advanced latte art to allow you to learn the essential life skill of how to make truly great coffee.",
+        "description": "Grind fresh beans to medium-coarse.\nAdd 2 tablespoons of coffee per 180 ml hot water.\nBrew for 4 minutes using a French press or pour-over.\nServe hot, optionally with milk or sugar for taste.",
         "button_text": "",
         "button_link": "",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/3c9562785e1b4c7fa0cb0324f4adff7e.mp4",
+        "video_url": "{{ product.metafields.custom.video.value }}",
         "video_poster": "shopify://shop_images/coffee-4334647_640.jpg"
       }
     }
