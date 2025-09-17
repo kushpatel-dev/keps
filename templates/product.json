@@ -54,6 +54,12 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "custom_liquid_6YXaVR": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<button\n  type=\"button\"\n  class=\"wishlist_button\"\n  data-product-handle=\"{{ product.handle }}\"\n  data-product-title=\"{{ product.title | escape }}\"\n  data-product-image=\"{{ product.featured_image | img_url: '600x' }}\"\n  data-product-price=\"{{ product.price | money }}\"\n  data-product-url=\"{{ product.url }}\"\n  onclick=\"toggleWishlistFromBtn(this)\"\n  aria-label=\"Add to wishlist\"\n>\n  <!-- simple heart icon; replace with your SVG if you want -->\n  <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">\n    <path d=\"M16.5 4.5c2.206 0 4 1.794 4 4 0 4.67-5.543 8.94-8.5 11.023C9.043 17.44 3.5 13.17 3.5 8.5c0-2.206 1.794-4 4-4 1.298 0 2.522.638 3.273 1.706L12 7.953l1.227-1.746c.75-1.07 1.975-1.707 3.273-1.707z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/>\n  </svg>\n  <span class=\"wishlist_text\">Not In Wishlist</span>\n</button>"
+          }
         }
       },
       "block_order": [
@@ -64,7 +70,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "custom_liquid_6YXaVR"
       ],
       "settings": {
         "enable_sticky_info": true,

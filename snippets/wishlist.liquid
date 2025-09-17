@@ -1,0 +1,59 @@
+{%- comment -%} 
+  Snippet: wishlist.liquid
+  Renders the wishlist page block and loads the wishlist.js asset. 
+{%- endcomment -%}
+
+<div class="section__wishlist page-width">
+  <h1 class="wishlist-title">Wishlist</h1>
+  <div class="js-wishlistBlock"></div>
+</div>
+
+<style>
+  /* Minimal styling — tweak to match your store */
+  .section__wishlist .js-wishlistBlock {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .wishlist-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border: 1px solid #e6e6e6;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  .wishlist-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  .wishlist-item__meta {
+    flex: 1;
+  }
+  .wishlist-remove {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .wishlist_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  .wishlist_button.in-wishlist svg path {
+    fill: #e11d48;
+  } /* heart filled color */
+  .wishlist-empty {
+    color: #666;
+    padding: 1rem 0;
+  }
+</style>
+
+{{ 'wishlist.js' | asset_url | script_tag }}
