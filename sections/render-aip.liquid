@@ -1,16 +1,3 @@
-{% schema %}
-  {
-    "name": "Render AIP",
-    "settings": [],
-    "presets": [
-      {
-        "name": "Render AIP"
-      }
-    ]
-  }
-{% endschema %}
-
-{% comment %} sections/youtube-embed.liquid {% endcomment %}
 <style>
   .basic-render {
     margin-top: 2rem;
@@ -66,5 +53,29 @@
 </style>
 
 <div class="basic-render">
-  <button class="button">Render</button>
+  <button data-render class="button">Render</button>
+  <div class="render-output"></div>
 </div>
+
+
+<script>
+  const button = document.querySelector('[data-render]');
+  button.addEventListener('click',() => {
+    fetch(`${window.Shopify.routes.root}?sections=ctm-card`)
+  .then((res) => res.json())
+  .then((data) => {
+    document.querySelector('.render-output').innerHTML = data['ctm-card'];
+  });
+  })
+</script>
+{% schema %}
+  {
+    "name": "Render API",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Render API"
+      }
+    ]
+  }
+{% endschema %}
