@@ -1,11 +1,11 @@
 <div class="w-full h-auto overflow-x-hidden bg-[#fdf2d8] flex flex-col md:flex-row border border-gray-400 divide-y divide-gray-400 md:divide-y-0 md:divide-x">
   <div class="flex flex-col justify-between p-8 w-full md:w-[60%]">
-    <div>
+    <div class="ctm-h2">
       {% comment %} main heading {% endcomment %}
-      <h2 class="ctm-h2">
+      <h2 class="big">
         {{ section.settings.heading-top }}
       </h2>
-      <h2 class="text-3xl md:text-4xl font-bold uppercase text-gray-900 leading-tight">
+      <h2 class="text-3xl md:text-4xl font-bold uppercase text-gray-900 leading-tight small">
         {{ section.settings.heading | escape | newline_to_br }}
         <span class="relative bg-none">
           <span class="bg-yellow-200 px-1 pb-1 rounded-lg relative" style="box-shadow: 0 -8px 0 0 #fdedaf inset;">
@@ -16,7 +16,7 @@
         {{ section.settings.heading_2 | escape }}
       </h2>
       <!-- Description -->
-      <p class="text-[13px] mt-5 text-gray-800">
+      <p class="text-[13px] mt-5 text-gray-800" style="font-family: cursive;">
         {{ section.settings.description }}
       </p>
     </div>
@@ -42,7 +42,7 @@
       </a>
 
       <!-- Price -->
-      <p class="text-gray-900 font-bold text-base">{{ product.price | money }}</p>
+      <p class="text-gray-900 font-bold text-base" style="font-family: cursive;">{{ product.price | money }}</p>
 
       <!-- Buy Button -->
       <form
@@ -53,7 +53,10 @@
           type="hidden"
           name="id"
           value="{{ product.variants.first.id }}" />
-        <button type="submit" class="bg-gradient-to-r from-[#e7e4c6] to-[#dab66d] text-black shadow border-amber-950 border-[1px] hover:from-[#dab66d] hover:to-[#e7e4c6] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">
+        <button
+          type="submit"
+          class="ctm-button-fill"
+          style="font-family: cursive;">
           Add to Cart
         </button>
       </form>

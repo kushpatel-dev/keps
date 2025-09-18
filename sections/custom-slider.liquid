@@ -19,7 +19,7 @@
           <!-- Text Right -->
           <div class="relative px-8 md:w-[30%] w-full flex flex-col items-start">
             <div class="flex items-center gap-3 mb-5"
-              style="font-size: {{ block.settings.main_text_size }}px; color: {{ block.settings.text_color }}; font-family: {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}};">
+              style="font-size: {{ block.settings.main_text_size }}px; color: {{ block.settings.text_color }}; font-family:Gloria Hallelujah, cursive;">
               <span>{{ block.settings.custom_text }}</span>
               <div class="absolute top-[80px] right-10 md:top-[-30px] md:right-[-10px]">
                 {% if block.settings.logo_img != blank %}
@@ -128,7 +128,7 @@
   </div>
 
   <!-- End Text -->
-  <div class="w-full text-center text-[18px] font-mono text-black bg-white border-b border-gray-200 shadow-sm py-1">
+  <div class="w-full text-center text-[18px] text-black bg-white border-b border-gray-200 shadow-sm py-1" style="font-family: cursive;">
     {{ section.settings.ctm_end_text }}
   </div>
 </section>
@@ -187,12 +187,7 @@
 {
   "name": "Custom Image/Text Slider",
   "settings": [
-    {
-      "type": "font_picker",
-      "id": "main_font",
-      "label": "Main Text Font",
-      "default": "work_sans_n4"
-    },
+    
     {
       "type": "color",
       "id": "background",
@@ -263,3 +258,5 @@
   "presets": [{ "name": "Custom Slider" }]
 }
 {% endschema %}
+
+{% comment %}  {{ section.settings.main_font.family }},{{section.settings.main_font.fallback_families}}; {% endcomment %}

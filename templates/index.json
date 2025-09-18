@@ -113,10 +113,9 @@
       ],
       "name": "Custom Slider",
       "settings": {
-        "main_font": "azeret_mono_n4",
-        "background": "#ffffff",
+        "background": "#fdf2d8",
         "ctm_end_text": "fairtrade  |  Organic  |  Climate neutral",
-        "scroll_time": 8
+        "scroll_time": 10
       }
     },
     "featured_collection": {
@@ -235,7 +234,7 @@
       "type": "ctm-line-section",
       "name": "Custom Line Section",
       "settings": {
-        "section_title": "The Coffee that's right for you"
+        "section_title": "Which Coffee do you love mosttt."
       }
     },
     "ctm_product_GPDqxk": {

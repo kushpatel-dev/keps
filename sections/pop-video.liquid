@@ -19,13 +19,13 @@
           text-5xl
           tracking-[{{ section.settings.heading_letter_spacing }}px]
           font-bold
-        ">
+        " style="font-family: cursive;">
       {{ section.settings.heading }}
     </h2>
     {% endif %}
 
     {% if section.settings.description != blank %}
-    <div class="text-[calc(16px*{{ section.settings.description_size | times: 0.01 }})] leading-relaxed mb-10">
+    <div class="text-[calc(16px*{{ section.settings.description_size | times: 0.01 }})] leading-relaxed mb-10" style="font-family: cursive;">
       {{ section.settings.description }}
     </div>
     {% endif %}
@@ -72,7 +72,7 @@
       bg-[{{ section.settings.button_bg_color }}] 
       text-[{{ section.settings.button_text_color }}] 
       shadow-md hover:scale-105 transition-transform duration-300
-    ">
+    " style="font-family: cursive;">
             View Product
           </a>
         </div>

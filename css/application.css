@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-.ctm-h2 {
-  @apply text-4xl xl:text-6xl font-extrabold font-sans uppercase text-neutral-800 leading-tight;
+.ctm-h2 h2{
+  @apply text-4xl xl:text-6xl font-sans uppercase text-neutral-800 leading-tight;
+  font-family: "Gloria Hallelujah", cursive;  
 }
 
 .ctm-h3 {
   @apply text-2xl font-bold uppercase text-gray-900 text-center;
+  font-family: cursive;
 }
 
 
@@ -22,18 +24,22 @@
 /* hero */
 .contact-block-heading {
   @apply text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 uppercase font-sans tracking-tight;
+  font-family: cursive;
 }
 
 .contact-block-detail {
   @apply text-lg md:text-2xl lg:text-3xl mb-1 md:mb-2;
+    font-family: cursive;
 }
 
 .contact-block-opening-hours {
   @apply text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 whitespace-pre-line;
+    font-family: cursive;
 }
 
 .contact-block-btn{
   @apply inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  font-family: cursive;
 }
 
 @keyframes shake {
@@ -60,22 +66,35 @@
 
 .ctm-text-for-line {
   @apply text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 uppercase pt-10 px-2.5 bg-[#fdf2d8];
+  font-family: cursive;
 }
 /* addtocart */
 .ctm-qty-style {
   @apply bg-white rounded-lg text-gray-700 font-semibold text-center shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition;
   border: none !important;
 }
+.ctm-h3-title{
+  @apply text-lg sm:text-[20px] font-bold text-gray-900 group-hover:text-indigo-600 transition;
+  font-family: cursive;
+}
 
 /* 
 image banner section 
 */
+.ctm-button-fill{
+  @apply bg-gradient-to-r from-[#e7e4c6] to-[#dab66d] text-black shadow border-amber-950 border-[1px] hover:from-[#dab66d] hover:to-[#e7e4c6] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition;
+}
 
+.ctm-link-fill{
+  @apply bg-orange-900 hover:bg-orange-950 text-white font-semibold py-3 px-8 rounded-lg transition;
+  font-family: cursive;
+}
 .ctm-img-banner-div {
   @apply absolute inset-0 flex flex-col justify-center items-center text-center px-4;
 }
 .ctm-img-h2{
   @apply !text-white text-3xl shadow-amber-950 md:text-[46px] font-bold drop-shadow-lg mb-6;
+  font-family: cursive;
 }
 
 .ctm-bg label::before{
@@ -163,6 +182,7 @@ font-family:"subway-novella";
 
 .ctm-p-font{
 @apply md:text-3xl;
+font-family: cursive;
 }
 
 .ctm-card-title{
@@ -186,4 +206,4 @@ font-family:"subway-novella";
 .tilt-card:hover {
   transform: perspective(800px) rotateY(-4deg);
 }
-
+/* 18 - 8 custome font for all layout */
