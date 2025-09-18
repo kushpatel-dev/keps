@@ -1,4 +1,4 @@
-<div class="w-full bg-white py-12">
+<div class="w-full py-12 color-{{ section.settings.color_scheme }}" >
   <div class="max-w-8xl mx-auto">
     <div
       class="
@@ -234,6 +234,12 @@
 {
   "name": "Review Carousel",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "background color",
+      "default": "scheme-1"
+    },
     {
       "type": "font_picker",
       "id": "custom_font",

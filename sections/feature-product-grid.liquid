@@ -11,6 +11,12 @@
         "default": "Featured Collection"
       },
       {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "background color",
+        "default": "scheme-1"
+      },
+      {
         "type": "select",
         "id": "fp-source-type",
         "label": "Source Type",
@@ -30,8 +36,7 @@
         "id": "fp-collection",
         "label": "Collection",
         "info": "Select a collection to display its products"
-      },
-      {
+      }, {
         "type": "product_list",
         "id": "fp-product-list",
         "label": "Products",
@@ -145,6 +150,8 @@
 <style>
   .fp-featured-products-section {
     padding: 60px 0;
+
+    background-color: #fdf2d4;
   }
 
   .fp-product-grid {
@@ -218,7 +225,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
     color: #fff;
   }
@@ -243,6 +250,7 @@
     opacity: 0.8;
     margin-bottom: 5px;
     color: #000;
+    font-family: cursive;
   }
 
   .fp-product-card-price {
@@ -365,9 +373,9 @@
     justify-content: center;
     gap: 5px;
     padding: 5px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: #fdf2d4;
+
+
   }
 
   .fp-hidden-product {
@@ -400,7 +408,7 @@
 
 </style>
 
-<div class="page-width">
+<div class="page-width color-{{ section.settings.color_scheme }}">
   <h2 class="fp-section-title text-4xl pb-5">{{ section.settings.fp-title }}</h2>
 
 
@@ -522,7 +530,10 @@
       {% if section.settings.fp-show-all-products-inline %}
         {% assign total_products = collections[section.settings.fp-collection].products.size %}
         {% if total_products > section.settings.fp-products-to-show %}
-          <button class="fp-all-products-button fp-load-more-btn" id="fp-load-more-products">
+          <button
+            class="fp-all-products-button fp-load-more-btn"
+            id="fp-load-more-products"
+            style="font-family: cursive;">
             Show All Products ({{ total_products }})
           </button>
         {% endif %}

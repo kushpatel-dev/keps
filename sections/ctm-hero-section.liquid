@@ -1,4 +1,4 @@
-<div class="bg-gray-50 py-6 w-full color-{{ section.settings.color_scheme }}">
+<div class="bg-gray-50 pt-6 w-full color-{{ section.settings.color_scheme }}">
   <div class="w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md color-{{ section.settings.color_scheme }}">
 
     <!-- LEFT: Vertical Tabs (Horizontal on mobile) -->
@@ -6,7 +6,7 @@
       {% for block in section.blocks %}
         <button
           type="button"
-          class="tab-btn transition-colors py-2 px-2.5 duration-200 border-gray-200 last:border-0 font-bold font-sans text-sm md:text-lg lg:text-xl uppercase tracking-wide
+          class="ctm-button-font tab-btn transition-colors py-2 px-2.5 duration-200 border-gray-200 last:border-0 font-bold font-sans text-sm md:text-lg lg:text-xl uppercase tracking-wide
               h-14 w-full md:h-auto md:w-14 lg:h-auto lg:w-16 flex items-center justify-center
               {% if forloop.first %}bg-orange-950 text-white{% else %}bg-white text-orange-950 hover:bg-orange-950 hover:text-white{% endif %}
               border-b md:border-r md:last:border-b-0 md:border-b-0"
@@ -39,7 +39,7 @@
           </div>
 
           <!-- TEXT Right -->
-          <div class="contact-block-container">
+          <div class="contact-block-container max-w-3xl text-center">
             <div>
               <h3 class="contact-block-heading">
                 {{ block.settings.heading }}

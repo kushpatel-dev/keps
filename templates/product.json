@@ -177,7 +177,8 @@
       "name": "Product FAQ Accordion",
       "settings": {
         "heading": "FAQ",
-        "description": "the populer question for user know if they use our product."
+        "description": "the populer question for user know if they use our product.",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
     },
     "1757590167a2b1bed5": {
@@ -195,7 +196,8 @@
         "button_text": "",
         "button_link": "",
         "video_url": "{{ product.metafields.custom.video.value }}",
-        "video_poster": "shopify://shop_images/coffee-4334647_640.jpg"
+        "video_poster": "shopify://shop_images/coffee-4334647_640.jpg",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
     }
   },

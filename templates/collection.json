@@ -14,7 +14,7 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
     },
     "product-grid": {
@@ -43,6 +43,7 @@
       "name": "Featured Products Grid",
       "settings": {
         "fp-title": "Product Collection Grid",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8",
         "fp-source-type": "collection",
         "fp-collection": "coffee",
         "fp-product-list": [
@@ -61,10 +62,10 @@
         "fp-shop-button-text-color": "#e9dac7",
         "fp-shop-button-bg-hover-color": "#e9dac7",
         "fp-shop-button-text-hover-color": "#4b1407",
-        "fp-all-products-button-bg-color": "#e9dac7",
-        "fp-all-products-button-text-color": "#121212",
-        "fp-all-products-button-bg-hover-color": "#fdf2d8",
-        "fp-all-products-button-text-hover-color": "#74695b",
+        "fp-all-products-button-bg-color": "#4b1407",
+        "fp-all-products-button-text-color": "#e9dac7",
+        "fp-all-products-button-bg-hover-color": "#e9dac7",
+        "fp-all-products-button-text-hover-color": "#4b1407",
         "all-product": "shopify://collections/coffee",
         "fp-show-all-products-inline": true
       }

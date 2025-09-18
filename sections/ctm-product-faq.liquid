@@ -15,6 +15,11 @@
         "id": "description",
         "label": "Description",
         "default": "A playful, notebook-style accordion for product questions."
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "background color",
+        "default": "scheme-1"
       }
     ],
     "blocks": [
@@ -45,7 +50,7 @@
   }
 {% endschema %}
 
-<section class="faq-section py-12 px-4">
+<section class="faq-section py-12 px-4 color-{{ section.settings.color_scheme }}">
   {% if section.settings.heading != blank %}
     <h2>{{ section.settings.heading }}</h2>
   {% endif %}

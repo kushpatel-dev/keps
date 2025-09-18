@@ -115,7 +115,7 @@
       "settings": {
         "background": "#fdf2d8",
         "ctm_end_text": "fairtrade  |  Organic  |  Climate neutral",
-        "scroll_time": 10
+        "scroll_time": 6
       }
     },
     "featured_collection": {
@@ -429,7 +429,8 @@
         "button_text": "View More",
         "button_link": "shopify://collections/coffee",
         "video_url": "https://cdn.shopify.com/videos/c/o/v/230f9e233d7243eca3572b78ee9726ee.mp4",
-        "video_poster": "shopify://shop_images/Screenshot_19.png"
+        "video_poster": "shopify://shop_images/Screenshot_19.png",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
     },
     "ctm_review_section_HfTWYd": {
@@ -470,6 +471,7 @@
       ],
       "name": "Review Carousel With Image",
       "settings": {
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8",
         "custom_font": "kaushan_script_n4",
         "layout_direction": "rtl"
       }
@@ -515,7 +517,8 @@
       ],
       "name": "CTM Card",
       "settings": {
-        "section_heading": "celebrate the farmer’s craft."
+        "section_heading": "celebrate the farmer’s craft.",
+        "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
     }
   },

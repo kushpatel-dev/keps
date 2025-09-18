@@ -207,3 +207,11 @@ font-family: cursive;
   transform: perspective(800px) rotateY(-4deg);
 }
 /* 18 - 8 custome font for all layout */
+
+.ctm-button-font{
+  font-family: cursive;
+}
+
+.shopify-payment-button .shopify-payment-button__button{
+  font-family: cursive;
+} 

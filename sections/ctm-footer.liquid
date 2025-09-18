@@ -3,10 +3,10 @@
 
     <!-- Newsletter Left -->
     <div class="flex text-center lg:text-left flex-col relative" style="width:{{ section.settings.newsletter_box_width }}px; height:{{ section.settings.newsletter_box_height }}px;">
-      <p class="uppercase text-sm" style="color: {{ section.settings.text_color }}; font-family: {{ section.settings.font_family }};">
+      <p class="uppercase text-sm" style="color: {{ section.settings.text_color }};">
         {{ section.settings.newsletter_subtitle }}
       </p>
-      <h2 class="tracking-wide font-extrabold" style="font-size: {{ section.settings.heading_size }}px; font-family: {{ section.settings.font_family }};color: {{ section.settings.text_color }};">
+      <h2 class="tracking-wide font-extrabold" style="font-size: {{ section.settings.heading_size }}px;color: {{ section.settings.text_color }};">
         {{ section.settings.newsletter_title }}
       </h2>
     </div>
@@ -20,10 +20,11 @@
         name="contact[tags]"
         value="newsletter">
 
-      <div class="flex relative w-full max-w-[340px] rounded-full overflow-hidden shadow-lg">
+      <div class="flex relative w-full max-w-[380px] rounded-full overflow-hidden shadow-lg">
         <input
           id="NewsletterForm--{{ section.id }}"
           type="email"
+          style="font-family: cursive;"
           name="contact[email]"
           value="{{ form.email }}"
           placeholder="{{ section.settings.input_placeholder }}"
@@ -47,7 +48,7 @@
           class="px-6 py-3 font-semibold transition-all"
           style="background-color: {{ section.settings.button_bg }};
              color: {{ section.settings.button_text_color }};
-             font-family: {{ section.settings.font_family }};">
+             font-family: cursive;">
           {{ section.settings.button_label }}
         </button>
       </div>
@@ -73,7 +74,7 @@
 
     <!-- Social Media Icons -->
     <div class="flex items-center gap-4">
-      <span class="text-xl font-bold" style="font-size: {{ section.settings.social_heading_size }}px; font-family: {{ section.settings.font_family }};">
+      <span class="text-xl font-bold" style="font-size: {{ section.settings.social_heading_size }}px; font-family: cursive;">
         {{ section.settings.social_heading }}
       </span>
       <div class="flex gap-3 items-center">

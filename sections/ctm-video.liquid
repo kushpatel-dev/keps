@@ -1,5 +1,5 @@
-<section class="w-full bg-[#ffffff] py-8 md:py-14">
-  <div class="w-full flex flex-col-reverse lg:flex-row items-center gap-6 md:gap-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+<section class="w-full color-{{ section.settings.color_scheme }} py-8 md:py-14">
+  <div class="w-full flex flex-col-reverse lg:flex-row items-center gap-6 md:gap-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 ">
     <!-- Right: Text Content -->
     <div class="w-full lg:w-1/2 flex flex-col items-start justify-center gap-4 md:gap-5">
       <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-extrabold text-gray-800 leading-tight">
@@ -9,7 +9,10 @@
         {{ section.settings.description }}
       </p>
       {% if section.settings.button_text != blank %}
-        <a href="{{ section.settings.button_link }}" class="inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+        <a
+          href="{{ section.settings.button_link }}"
+          style="font-family: cursive;"
+          class="inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
           {{ section.settings.button_text }}
         </a>
       {% endif %}
@@ -67,6 +70,11 @@
         "type": "image_picker",
         "id": "video_poster",
         "label": "Video Poster/Thumbnail"
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "scheme_1",
+        "label": "Color scheme"
       }
     ],
     "presets": [

@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center items-center p-6 bg-white overflow-x-hidden">
+<div class="flex flex-col justify-center items-center p-6 bg-white overflow-x-hidden color-{{ section.settings.color_scheme }}">
   <h2 class="text-5xl text-gray-900 pt-5 pb-12">{{ section.settings.section_heading }}</h2>
   <div class="gap-6 flex flex-col md:flex-row justify-center items-center">
 
@@ -11,7 +11,7 @@
             width=""
             src="{{ block.settings.card_image | img_url: 'medium' }}"
             alt="{{ block.settings.card_title }}"
-            class="w-full h-[360px] object-cover rounded-lg mb-4">
+            class="w-full h-[360px] object-cover rounded-lg mb-4" style="font-family: cursive;">
         {% endif %}
 
         <h2 class="absolute top-[30px] left-[20px] ctm-card-title px-2.5 !text-[24px] md:!text-[18px] lg:!text-[20px] bg-orange-300 rounded-3xl opacity-95 font-bold">
@@ -41,6 +41,11 @@
         "type": "text",
         "id": "section_heading",
         "label": "Section Heading"
+      }, {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "background color",
+        "default": "scheme-1"
       }
     ],
     "blocks": [
@@ -48,6 +53,7 @@
         "type": "ctm_card",
         "name": "ctm_card",
         "settings": [
+
           {
             "type": "image_picker",
             "id": "card_image",
