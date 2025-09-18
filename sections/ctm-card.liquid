@@ -3,7 +3,7 @@
   <div class="gap-6 flex flex-col md:flex-row justify-center items-center">
 
     {% for block in section.blocks %}
-      <div class="relative min-w-[310px] sm:min-w-[250px] md:max-w-[230px] lg:max-w-[340px] xl:max-w-[450px] ctm-card bg-gray-50 rounded-xl shadow-md p-4 flex flex-col justify-center items-center text-center">
+      <div class="relative min-w-[310px] sm:min-w-[250px] md:max-w-[230px] lg:max-w-[340px] xl:max-w-[450px] ctm-card bg-[#fdf2d4] rounded-xl shadow-md p-4 flex flex-col justify-center items-center text-center">
 
         {% if block.settings.card_image %}
           <img
@@ -11,7 +11,8 @@
             width=""
             src="{{ block.settings.card_image | img_url: 'medium' }}"
             alt="{{ block.settings.card_title }}"
-            class="w-full h-[360px] object-cover rounded-lg mb-4" style="font-family: cursive;">
+            class="w-full h-[360px] object-cover rounded-lg mb-4"
+            style="font-family: cursive;">
         {% endif %}
 
         <h2 class="absolute top-[30px] left-[20px] ctm-card-title px-2.5 !text-[24px] md:!text-[18px] lg:!text-[20px] bg-orange-300 rounded-3xl opacity-95 font-bold">
