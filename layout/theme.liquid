@@ -433,4 +433,31 @@ body {
     {%- endif -%}
 
   </body>
+  <script>
+      document.addEventListener('DOMContentLoaded', async function () {
+    async function fetchProductData() {
+      const productHandle = 'caramel-sunrise';
+      const res = await fetch(`/products/${productHandle}.js`);
+      const product = await res.json();
+      return product;
+    }
+
+    try {
+      const product = await fetchProductData();
+    const firstImage = product.images[0];
+    const secImg = product.images[1];
+    document.querySelector('.product__media-wrapper').insertAdjacentHTML(
+      'beforeend',
+      `<img src="${firstImage}" alt="${product.title}" style="max-width:200px; margin-top:15px;">`
+    );
+    document.querySelector('.product__media-wrapper').insertAdjacentHTML(
+      'beforeend',
+      `<img src="${secImg}" alt="${product.title}" style="max-width:200px; margin-top:15px;">`
+    );
+    } catch (err) {
+      console.error("Error fetching product:", err);
+    }
+      });
+  </script>
+
 </html>
