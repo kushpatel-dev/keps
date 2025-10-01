@@ -142,6 +142,18 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "16808334042028794307": {
+        "type": "shopify://apps/a11ypro/blocks/accessibility-widget/1b6292c6-755d-4340-89b4-449c98087cbf",
+        "disabled": false,
+        "settings": {}
+      },
+      "1906576806705129218": {
+        "type": "shopify://apps/a11ypro/blocks/accessibility-autofix/1b6292c6-755d-4340-89b4-449c98087cbf",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
