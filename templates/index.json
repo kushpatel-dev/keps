@@ -520,6 +520,21 @@
         "section_heading": "celebrate the farmer’s craft.",
         "color_scheme": "scheme-061cc556-ddbf-497a-a488-0fbb4d66e9a8"
       }
+    },
+    "1759316617bab43964": {
+      "type": "apps",
+      "blocks": {
+        "instasync_instagram_feed_instasync_feed_EbqTmR": {
+          "type": "shopify://apps/instasync-instagram-feed/blocks/instasync_feed/98ab4ac6-e751-4136-9aa2-fada4b7a70e8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "instasync_instagram_feed_instasync_feed_EbqTmR"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -535,6 +550,7 @@
     "ctm_hero_section_McUtBJ",
     "ctm_video_BaRJzA",
     "ctm_review_section_HfTWYd",
-    "ctm_card_Wdn9t8"
+    "ctm_card_Wdn9t8",
+    "1759316617bab43964"
   ]
 }
