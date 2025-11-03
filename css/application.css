@@ -4,11 +4,11 @@
   @apply text-4xl xl:text-6xl font-sans uppercase text-neutral-800 leading-tight;
   font-family: "Gloria Hallelujah", cursive;  
 }
-
+/* 
 .ctm-h3 {
   @apply text-2xl font-bold uppercase text-gray-900 text-center;
   font-family: cursive;
-}
+} */
 
 
 .ctm-font h2 {
