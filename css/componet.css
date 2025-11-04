@@ -229,6 +229,13 @@ div .container{
   @apply !bg-[#fae8bf];
 }
 
+.main-btn{
+  @apply inline-block rounded-full font-semibold text-black bg-orange-50 shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 hover:text-white hover:bg-orange-900 mb-2 px-5 py-4 md:px-7 md:py-[10px] text-[14px] lg:px-8 lg:py-[12px] lg:text-[15px];
+}
+
+.dark-btn{
+  @apply inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+}
 
 /* that is working for a app .
 @media (min-width: 768px) {
