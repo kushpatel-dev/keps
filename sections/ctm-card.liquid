@@ -1,6 +1,8 @@
 <div class="flex flex-col justify-center items-center p-6 bg-white overflow-x-hidden color-{{ section.settings.color_scheme }}">
-  <h2 class="text-5xl text-gray-900 pt-5 pb-12">{{ section.settings.section_heading }}</h2>
-  <div class="gap-6 flex flex-col md:flex-row justify-center items-center">
+<div class="container"> 
+<h2 class="text-5xl text-gray-900 pt-5 pb-12 mx-auto">{{ section.settings.section_heading }}</h2>
+
+  <div class="gap-6 flex flex-col md:flex-row justify-center items-center py-5">
 
     {% for block in section.blocks %}
       <div class="relative min-w-[310px] sm:min-w-[250px] md:max-w-[230px] lg:max-w-[340px] xl:max-w-[450px] ctm-card bg-[#fdf2d4] rounded-xl shadow-md p-4 flex flex-col justify-center items-center text-center">
@@ -32,6 +34,8 @@
       </div>
     {% endfor %}
   </div>
+
+ </div> 
 </div>
 
 {% schema %}

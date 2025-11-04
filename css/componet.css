@@ -1,3 +1,239 @@
 .lightBg span{
 @apply bg-blue-300;
 }
+.ctm-h2 h2{
+  @apply text-4xl xl:text-6xl font-sans uppercase text-neutral-800 leading-tight;
+  font-family: "Gloria Hallelujah", cursive;  
+}
+/* 
+.ctm-h3 {
+  @apply text-2xl font-bold uppercase text-gray-900 text-center;
+  font-family: cursive;
+} */
+
+
+.ctm-font h2 {
+  @apply text-amber-50 font-extrabold font-serif inline-flex;
+}
+.ctm-font h2:hover {
+  @apply text-[#d76735];
+}
+
+.ctm-review-text{
+    @apply text-2xl md:text-3xl font-extrabold text-center text-gray-900 mb-3 leading-tight
+}
+/* hero */
+.contact-block-heading {
+  @apply text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 uppercase font-sans tracking-tight;
+  font-family: cursive;
+}
+
+.contact-block-detail {
+  @apply text-lg md:text-2xl lg:text-3xl mb-1 md:mb-2;
+    font-family: cursive;
+}
+
+.contact-block-opening-hours {
+  @apply text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 whitespace-pre-line;
+    font-family: cursive;
+}
+
+.contact-block-btn{
+  @apply inline-block bg-orange-950 hover:bg-orange-900 text-white rounded-full px-5 py-2 md:px-[30px] md:py-[10px] text-xs md:text-[14px] font-semibold shadow-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  font-family: cursive;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.img-shake:hover {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.image-block-container {
+  @apply w-full md:w-[500px] lg:w-[600px] xl:w-[760px] flex-shrink-0 mb-4 md:mb-0 overflow-hidden;
+}
+
+.image-block-main-img {
+  @apply rounded-lg border border-gray-200 shadow-sm w-full object-cover aspect-[8/5] md:aspect-[16/12] lg:aspect-[21/15] xl:aspect-[24/12] transition-transform duration-300 ease-in-out hover:opacity-90 hover:scale-102;
+}
+
+.image-block-placeholder {
+  @apply w-full h-[220px] md:h-[320px] lg:h-[450px] xl:h-[500px] bg-gray-100 rounded-lg flex items-center justify-center text-gray-400;
+}
+
+.ctm-text-for-line {
+  @apply text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 uppercase py-10 px-2.5 bg-[#fdf2d8];
+  font-family: cursive;
+}
+/* addtocart */
+.ctm-qty-style {
+  @apply bg-white rounded-lg text-gray-700 font-semibold text-center shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition;
+  border: none !important;
+}
+.ctm-h3-title{
+  @apply text-lg sm:text-[20px] font-bold text-gray-600 group-hover:text-indigo-600 transition;
+  font-family: cursive;
+}
+
+/* 
+image banner section 
+*/
+.ctm-button-fill{
+  @apply bg-gradient-to-r from-[#e7e4c6] to-[#dab66d] text-black shadow border-amber-950 border-[1px] hover:from-[#dab66d] hover:to-[#e7e4c6] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition;
+}
+
+.ctm-link-fill{
+  @apply bg-orange-900 hover:bg-orange-950 text-white font-semibold py-3 px-8 rounded-lg transition;
+  font-family: cursive;
+}
+.ctm-img-banner-div {
+  @apply absolute inset-0 flex flex-col justify-center items-center text-center px-4;
+}
+.ctm-img-h2{
+  @apply !text-white text-3xl shadow-amber-950 md:text-[46px] font-bold drop-shadow-lg mb-6;
+  font-family: cursive;
+}
+
+.ctm-bg label::before{
+  @apply !bg-orange-950;
+}
+.ctm-rounded-img{
+  @apply rounded-3xl;
+}
+
+.svg-wrapper svg path {
+  transition: fill 0.2s ease;
+}
+.svg-wrapper svg:hover path {
+  fill: red;
+}
+.ctm-drawer {
+  @apply rounded-[20px] border-x-4 border-y-2 px-0 border-gray-800 overflow-hidden transition-colors transition-shadow duration-200 hover:border-black hover:shadow-md flex items-center;
+}
+
+.ctm-cart-price span {
+  @apply !text-emerald-700 font-semibold text-[18px] tracking-wide transition-colors duration-200 hover:text-emerald-900;
+}
+
+
+.ctm-cart-price p {
+  @apply !text-emerald-700 font-semibold text-[18px] tracking-wide transition-colors duration-200 hover:text-emerald-900;
+}
+
+/* 
+
+*/
+.ctm-drawer-btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-[5px] font-bold text-2xl text-white bg-cover bg-center transition-all duration-300 ease-in-out overflow-hidden;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.16),
+              0 0 10px 0 #E48A3C;
+  background-image: linear-gradient(
+      to bottom,
+      #c79466,
+      rgba(222, 135, 61, 0.24)
+    ),
+    url("https://cdn.shopify.com/s/files/1/0757/7151/1022/files/money-7171360_1280.jpg?v=1754649088");
+}
+
+.ctm-drawer-btn:hover {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.16),
+              0 0 30px 0 #E48A3C;
+}
+
+/* Pseudo-elements for shopping cart icon */
+.ctm-drawer-btn:before,
+.ctm-drawer-btn:after {
+  content: ""; /* Font Awesome icon */
+  display: inline-block; /* prevents affecting layout width */
+  transition: transform 0.3s ease;
+}
+
+.ctm-drawer-btn:hover:after {
+  transform: scale(1);
+}
+
+.ctm-drawer-btn:hover:before {
+  transform: scale(1.2); /* scale effect but no width expansion */
+}
+
+.ctm-drawer-btn b {
+  @apply font-bold;
+  color: #FFD9B4;
+}
+
+.ctm-h2-m{
+font-family:"subway-novella";
+
+}
+
+@media screen and (min-width: 990px) {
+  .ctm-blog {
+    max-width: 90.6rem !important;
+    padding: 0 !important;
+  }
+}
+
+.ctm-button-color button{
+@apply bg-[#fae8bf] text-gray-900 hover:bg-[#fdf2d8];
+}
+
+.ctm-p-font{
+@apply md:text-3xl;
+font-family: cursive;
+}
+
+.ctm-card-title{
+  @apply text-lg font-semibold px-3 py-1 rounded;
+}
+
+.shopify-policy__container{
+  @apply max-w-[100%] px-10;
+}
+.tilt-card {
+  transform: perspective(800px) rotateY(-8deg);
+  transition: transform 1s ease;
+  border-radius: 4px;
+  box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+}
+
+.tilt-card:hover {
+  transform: perspective(800px) rotateY(-4deg);
+}
+/* 18 - 8 custome font for all layout */
+
+.ctm-button-font{
+  font-family: cursive;
+}
+
+.shopify-payment-button .shopify-payment-button__button{
+  font-family: cursive;
+} 
+/* create a container for the same speces */
+div .container{
+  @apply max-[1439px]:max-w-full min-[1440px]:max-w-[1440px] mx-auto overflow-x-hidden;
+}
+
+.isa-container.isa-content-style-same-as-desktop {
+  @apply !bg-[#fae8bf];
+}
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
+        @apply !bg-[#fae8bf];
+    }
+}
+
+/* that is working for a app .
+@media (min-width: 768px) {
+.isa-container .isa-grid{
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+} */
