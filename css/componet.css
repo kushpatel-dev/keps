@@ -220,15 +220,15 @@ font-family: cursive;
 div .container{
   @apply max-[1439px]:max-w-full min-[1440px]:max-w-[1440px] mx-auto overflow-x-hidden;
 }
-
+/* 
 .isa-container.isa-content-style-same-as-desktop {
   @apply !bg-[#fae8bf];
+} */
+
+#shopify-section-template--20491105796334__1759316617bab43964{
+  @apply !bg-[#fae8bf];
 }
-@media (prefers-reduced-motion: no-preference) {
-    .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
-        @apply !bg-[#fae8bf];
-    }
-}
+
 
 /* that is working for a app .
 @media (min-width: 768px) {
