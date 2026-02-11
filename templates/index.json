@@ -535,6 +535,21 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1770807681466705b1": {
+      "type": "apps",
+      "blocks": {
+        "instasync_instagram_feed_instasync_feed_m7bj9g": {
+          "type": "shopify://apps/instasync-instagram-feed/blocks/instasync_feed/98ab4ac6-e751-4136-9aa2-fada4b7a70e8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "instasync_instagram_feed_instasync_feed_m7bj9g"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -551,6 +566,7 @@
     "ctm_video_BaRJzA",
     "ctm_review_section_HfTWYd",
     "ctm_card_Wdn9t8",
-    "1759316617bab43964"
+    "1759316617bab43964",
+    "1770807681466705b1"
   ]
 }
