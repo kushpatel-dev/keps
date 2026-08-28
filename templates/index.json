@@ -234,7 +234,7 @@
       "type": "ctm-line-section",
       "name": "Custom Line Section",
       "settings": {
-        "section_title": "Which Coffee do you love mosttt."
+        "section_title": ""
       }
     },
     "ctm_product_GPDqxk": {
@@ -301,7 +301,7 @@
       ],
       "name": "Coffee Types Grid",
       "settings": {
-        "heading": "",
+        "heading": "Which Coffee do you love mosttt.",
         "view_all_text": "View All",
         "view_all_url": "shopify://collections/coffee"
       }

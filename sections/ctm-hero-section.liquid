@@ -1,5 +1,5 @@
 <div class="bg-gray-50 pt-6 w-full color-{{ section.settings.color_scheme }}">
-  <div class="w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md color-{{ section.settings.color_scheme }}">
+  <div class="container w-full border-t border-b border-gray-200 bg-white flex flex-col md:flex-row shadow-md color-{{ section.settings.color_scheme }}">
 
     <!-- LEFT: Vertical Tabs (Horizontal on mobile) -->
     <div class="flex md:flex-col flex-row items-stretch border-b md:border-b-0 md:border-r border-gray-200">
@@ -19,9 +19,9 @@
     </div>
 
     <!-- RIGHT: Image and Info -->
-    <div class="flex-1 flex flex-col p-4 md:p-8 gap-6 md:gap-10">
+    <div class="flex-1 flex flex-col justify-center items-center p-4 md:p-8 gap-6 md:gap-10">
       {% for block in section.blocks %}
-        <div class="tab-content w-full gap-6 md:gap-10 flex flex-col md:flex-row justify-center items-center xl:gap-96 xl:justify-start xl:items-center {% unless forloop.first %}hidden{% endunless %}" data-tab-index="{{ forloop.index0 }}">
+        <div class="tab-content w-full gap-6 md:gap-10 flex flex-col md:flex-row justify-center items-center xl:gap-9 xl:justify-start xl:items-center {% unless forloop.first %}hidden{% endunless %}" data-tab-index="{{ forloop.index0 }}">
 
           <!-- IMAGE Left -->
           <div class="image-block-container img-shake">
@@ -60,7 +60,7 @@
             {% if block.settings.button_label != blank %}
               <a
                 href="{{ block.settings.button_link | default: '#' }}"
-                class="contact-block-btn"
+                class="main-btn"
                 target="_blank"
                 rel="noopener">
                 {{ block.settings.button_label }}

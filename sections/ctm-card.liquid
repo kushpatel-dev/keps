@@ -1,6 +1,8 @@
 <div class="flex flex-col justify-center items-center p-6 bg-white overflow-x-hidden color-{{ section.settings.color_scheme }}">
-  <h2 class="text-5xl text-gray-900 pt-5 pb-12">{{ section.settings.section_heading }}</h2>
-  <div class="gap-6 flex flex-col md:flex-row justify-center items-center">
+<div class="container"> 
+<h2 class="text-5xl text-gray-900 py-5 mx-auto">{{ section.settings.section_heading }}</h2>
+
+  <div class="gap-6 flex flex-col md:flex-row justify-center items-center py-5">
 
     {% for block in section.blocks %}
       <div class="relative min-w-[310px] sm:min-w-[250px] md:max-w-[230px] lg:max-w-[340px] xl:max-w-[450px] ctm-card bg-[#fdf2d4] rounded-xl shadow-md p-4 flex flex-col justify-center items-center text-center">
@@ -24,7 +26,7 @@
         </p>
 
         {% if block.settings.card_link %}
-          <a href="{{ block.settings.card_link }}" class="ctm-card__link text-amber-950 font-medium hover:underline hover:text-blue-800">
+          <a href="{{ block.settings.card_link }}" class="ctm-card__link text-amber-950 font-medium hover:underline hover:text-amber-950/80">
             {{ block.settings.link_text }}
           </a>
         {% endif %}
@@ -32,6 +34,8 @@
       </div>
     {% endfor %}
   </div>
+
+ </div> 
 </div>
 
 {% schema %}

@@ -1,5 +1,5 @@
-<section class="w-full py-8" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
-  <div class="w-full px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
+<section class="w-full py-8 !overflow-hidden" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="container px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
 
     <!-- Newsletter Left -->
     <div class="flex text-center lg:text-left flex-col relative" style="width:{{ section.settings.newsletter_box_width }}px; height:{{ section.settings.newsletter_box_height }}px;">
@@ -20,7 +20,7 @@
         name="contact[tags]"
         value="newsletter">
 
-      <div class="flex relative w-full max-w-[380px] rounded-full overflow-hidden shadow-lg">
+      <div class="flex relative w-full min-[370px]:!max-w-[380px] min-[768px]:max-w-[280px] min-[1024px]:max-w-[300px] min-[1440px]:max-w-[400px] rounded-full overflow-hidden shadow-lg">
         <input
           id="NewsletterForm--{{ section.id }}"
           type="email"
@@ -33,7 +33,7 @@
           autocorrect="off"
           autocapitalize="off"
           autocomplete="email"
-          class="flex-grow px-4 py-3 text-gray-800 bg-amber-50 focus:outline-none
+          class="max-w-[200px] md:max-w-[240px] flex-grow px-4 py-3 text-gray-800 bg-amber-50 focus:outline-none
         {% if form.errors %} border border-red-500 {% endif %}"
           {% if form.errors %}
           autofocus
@@ -45,7 +45,7 @@
 
         <button
           type="submit"
-          class="px-6 py-3 font-semibold transition-all"
+          class="px-6 py-3 font-semibold text-[14px] transition-all cursor-pointer"
           style="background-color: {{ section.settings.button_bg }};
              color: {{ section.settings.button_text_color }};
              font-family: cursive;">

@@ -78,7 +78,8 @@
 /* base */
 
 .page-width {
-  max-width: var(--page-width);
+  /* max-width: var(--page-width); */
+  max-width: 1440px; 
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -2787,7 +2788,7 @@ details[open] > .header__submenu {
   margin-left: 0;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .header__inline-menu {
     display: block;
   }
